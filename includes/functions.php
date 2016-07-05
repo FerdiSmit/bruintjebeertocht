@@ -1,5 +1,8 @@
 <?php
 
+require_once('config.php');
+include('classes/user.php');
+
 function validateInput()
 {
     global $usernameErr, $emailErr, $passErr, $confPassErr;
@@ -67,6 +70,11 @@ function validateInput()
             }
         }
     }
+
+    if (!isset($error))
+    {
+        saveRegistration($username, $email, $password);
+    }
 }
 
 function checkData($data)
@@ -75,4 +83,20 @@ function checkData($data)
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+function saveRegistration($username, $email, $password)
+{
+    global $db;
+
+    $user = new User($db);
+
+    $password_hash = $user->password_hash($password, PASSWORD_BCRYPT);
+
+    $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+    $stmt->execute(array(
+        ':username' => $username,
+        ':email' => $email,
+        ':password' => $password_hash
+    ));
 }
