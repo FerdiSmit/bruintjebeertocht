@@ -26,6 +26,10 @@ if (isset($_POST['submit']))
                     {
                         echo '<span class="error">' . $usernameErr . '</span>';
                     }
+                    if (isset($usernameExists))
+                    {
+                        echo '<span class="error">' . $usernameExists . '</span>';
+                    }
                     ?>
                 </div>
             </div>
@@ -37,6 +41,10 @@ if (isset($_POST['submit']))
                     if (isset($emailErr))
                     {
                         echo '<span class="error">' . $emailErr . '</span>';
+                    }
+                    if (isset($emailExists))
+                    {
+                        echo '<span class="error">' . $emailExists . '</span>';
                     }
                     ?>
                 </div>

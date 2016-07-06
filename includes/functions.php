@@ -3,6 +3,14 @@
 require_once('config.php');
 include('classes/user.php');
 
+/**
+ * Valideert de ingevoerde gegevens in het formulier.
+ * Hier wordt gecontroleerd of alles ingevuld is, of het wachtwoord
+ * voldoet aan bepaalde eisen, of het email voldoet aan bepaalde eisen
+ * en of het wachtwoord overeenkomt met de bevestigingswachtwoord.
+ *
+ * Wanneer alles klopt, kan de informatie door om op te slaan in de database.
+ */
 function validateInput()
 {
     global $usernameErr, $emailErr, $passErr, $confPassErr;
@@ -77,6 +85,12 @@ function validateInput()
     }
 }
 
+/**
+ * Checkt de data en verwijderd vreemde tekens uit de ingevoerde data.
+ *
+ * @param $data     De ingevoerde data in de formulier velden.
+ * @return string   De gecheckte ingevoerde data.
+ */
 function checkData($data)
 {
     $data = trim($data);
@@ -85,18 +99,68 @@ function checkData($data)
     return $data;
 }
 
+/**
+ * Slaat de nieuw geregistreerde gebruiker op. Er worden nog checks gedaan
+ * of de gebruiker al bestaat. De check wordt zowel op email als op gebruikersnaam
+ * uitgevoerd.
+ *
+ * @param $username
+ * @param $email
+ * @param $password
+ */
 function saveRegistration($username, $email, $password)
 {
     global $db;
+    global $usernameExists, $emailExists;
 
     $user = new User($db);
+    $now = new DateTime();
 
     $password_hash = $user->password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+    $stmt = $db->prepare("SELECT username FROM users WHERE username = :username");
     $stmt->execute(array(
         ':username' => $username,
-        ':email' => $email,
-        ':password' => $password_hash
     ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt = $db->prepare("SELECT email FROM users WHERE email = :email");
+    $stmt->execute(array(
+        ':email' => $email,
+    ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!empty($row['username']))
+    {
+        $error['username'] = 'De gebruikersnaam is al in gebruik. Probeer een andere gebruikersnaam.';
+    }
+    else if (!empty($row['email']))
+    {
+        $error['email'] = 'Het emailadres is al in gebruik. U kunt hier <a href="login.php">inloggen</a>';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'username')
+            {
+                $usernameExists = $value;
+            }
+            else if ($key == 'email')
+            {
+                $emailExists = $value;
+            }
+        }
+    }
+    else
+    {
+        $stmt = $db->prepare("INSERT INTO users (username, email, password, created_at) VALUES (:username, :email, :password, :created_at)");
+        $stmt->execute(array(
+            ':username' => $username,
+            ':email' => $email,
+            ':password' => $password_hash,
+            ':created_at' => $now->format('Y-m-d H:i:s')
+        ));
+    }
 }
