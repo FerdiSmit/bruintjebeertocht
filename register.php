@@ -2,9 +2,14 @@
 include('includes/functions.php');
 require('header.php');
 
+if ($user->is_logged_in())
+{
+    header('Location: dashboard.php');
+}
+
 if (isset($_POST['submit']))
 {
-    validateInput();
+    validateRegistration();
 }
 ?>
 

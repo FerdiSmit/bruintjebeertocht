@@ -10,10 +10,9 @@ class User extends Password{
         $this->_db = $db;
     }
 
-    private function get_user_hash($username){
-
+    public function get_user_hash($username){
         try {
-            $stmt = $this->_db->prepare('SELECT password, username, userID FROM users WHERE username = :username');
+            $stmt = $this->_db->prepare('SELECT username, password, userID FROM users WHERE username = :username');
             $stmt->execute(array('username' => $username));
 
             return $stmt->fetch();
@@ -38,6 +37,8 @@ class User extends Password{
 
     public function logout(){
         session_destroy();
+
+        header('Location: login.php');
     }
 
     public function is_logged_in(){

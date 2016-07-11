@@ -1,7 +1,6 @@
 <?php
 
-require_once('config.php');
-include('classes/user.php');
+require('config.php');
 
 /**
  * Valideert de ingevoerde gegevens in het formulier.
@@ -11,7 +10,7 @@ include('classes/user.php');
  *
  * Wanneer alles klopt, kan de informatie door om op te slaan in de database.
  */
-function validateInput()
+function validateRegistration()
 {
     global $usernameErr, $emailErr, $passErr, $confPassErr;
 
@@ -110,10 +109,9 @@ function checkData($data)
  */
 function saveRegistration($username, $email, $password)
 {
-    global $db;
+    global $db, $user;
     global $usernameExists, $emailExists;
 
-    $user = new User($db);
     $now = new DateTime();
 
     $password_hash = $user->password_hash($password, PASSWORD_BCRYPT);
@@ -162,5 +160,82 @@ function saveRegistration($username, $email, $password)
             ':password' => $password_hash,
             ':created_at' => $now->format('Y-m-d H:i:s')
         ));
+    }
+}
+
+function checkLogin()
+{
+    global $usernameErr, $passwordErr;
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (empty($username))
+    {
+        $error['username'] = 'Voert u alstublieft uw gebruikernaam in.';
+    }
+
+    if (empty($password))
+    {
+        $error['password'] = 'Voert u alstublieft uw wachtwoord in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'username')
+            {
+                $usernameErr = $value;
+            }
+            else if ($key == 'password')
+            {
+                $passwordErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        login($username, $password);
+    }
+}
+
+function login($username, $password)
+{
+    global $db, $user, $loginError;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('SELECT userID, username, password FROM users WHERE username = :username');
+    $stmt->execute(array(
+        ':username' => $username
+    ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user->password_verify($password, $row['password']) == 1)
+    {
+        $stmt = $db->prepare('UPDATE users SET last_login = :last_login WHERE username = :username');
+        $stmt->execute(array(
+            ':last_login' => $now->format('Y-m-d H:i:s'),
+            ':username' => $username
+        ));
+        $_SESSION['loggedin'] = true;
+        header('Location: dashboard.php');
+    }
+    else
+    {
+        $error['loginerror'] = 'Wachtwoord en/of gebruikersnaam komen niet overeen';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'loginerror')
+            {
+                $loginError = $value;
+            }
+        }
     }
 }
