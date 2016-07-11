@@ -1,0 +1,28 @@
+#admin-header {
+    height: 150px;
+}
+
+#admin-panel {
+    margin: auto;
+    padding: auto;
+}
+
+#admin-panel .container,
+#admin-panel .row,
+#admin-panel .col-xs-2,
+#admin-panel .col-xs-10 {
+    margin: 0;
+    padding: 0;
+}
+
+#admin-panel .container {
+    width: 100%;
+}
+
+#admin-panel .sidebar {
+
+}
+
+#admin-panel .content {
+    margin-left: 50px;
+}
