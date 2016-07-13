@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
    $(function() {
-       $(".datepicker").datepicker();
+       $("#datepicker").datepicker();
    })
 });

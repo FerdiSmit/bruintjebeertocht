@@ -1,5 +1,5 @@
 <?php
-require('includes/config.php');
+require('includes/functions.php');
 include('header.php');
 
 if (!$user->is_logged_in())

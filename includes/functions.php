@@ -221,6 +221,10 @@ function login($username, $password)
             ':username' => $username
         ));
         $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+
+        echo $_SESSION['username'];
+
         header('Location: dashboard.php');
     }
     else
@@ -238,4 +242,91 @@ function login($username, $password)
             }
         }
     }
+}
+
+function checkNews()
+{
+    global $titleErr, $summaryErr, $startDateErr, $endDateErr, $descErr;
+
+    $title = checkData($_POST['title']);
+    $summary = checkData($_POST['summary']);
+    $startDate = checkData($_POST['startdate']);
+    $description = $_POST['description'];
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voer alstublief een titel in.';
+    }
+
+    if (empty($summary))
+    {
+        $error['summary'] = 'Vul alstublieft een korte beschrijving in.';
+    }
+
+    if (empty($startDate))
+    {
+        $error['startDate'] = 'Vul alstublieft een startdatum in.';
+    }
+
+    if (empty($description))
+    {
+        $error['description'] = 'Vul alstublieft een beschrijving in';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $titleErr = $value;
+            }
+            else if ($key == 'summary')
+            {
+                $summaryErr = $value;
+            }
+            else if ($key == 'startDate')
+            {
+                $startDateErr = $value;
+            }
+            else if ($key == 'description')
+            {
+                $descErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        saveNews($title, $summary, $startDate, $description);
+    }
+}
+
+function saveNews($title, $summary, $startDate, $description)
+{
+    global $db;
+
+    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, longDesc) VALUES (:userID, :title, :shortDesc, :created_date, :longDesc)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':title' => $title,
+        ':shortDesc' => $summary,
+        ':created_date' => $startDate,
+        ':longDesc' => $description
+    ));
+}
+
+function getUserId()
+{
+    global $db;
+
+    $username = $_SESSION['username'];
+
+    $stmt = $db->prepare('SELECT userID FROM users WHERE username = :username');
+    $stmt->execute(array(
+        ':username' => $username
+    ));
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $row['userID'];
 }
