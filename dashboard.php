@@ -25,6 +25,7 @@ if (!$user->is_logged_in())
                 <div class="sidebar">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="?n=news.php">Nieuwsberichten</a></li>
+                        <li class="list-group-item"><a href="?p=poll.php">Poll</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,6 +47,14 @@ if (!$user->is_logged_in())
                     else if (isset($_GET['d']))
                     {
                         include('delete.php');
+                    }
+                    else if (isset($_GET['p']))
+                    {
+                        include('poll.php');
+                    }
+                    else if (isset($_GET['cp']))
+                    {
+                        include('createPoll.php');
                     }
                     ?>
                 </div>

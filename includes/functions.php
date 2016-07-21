@@ -428,6 +428,102 @@ function deleteNews()
     header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
 }
 
+function checkPoll()
+{
+    global $questionErr, $answerErr1, $answerErr2, $answerErr3;
+
+    $question = checkData($_POST['question']);
+    $answer1 = checkData($_POST['answer1']);
+    $answer2 = checkData($_POST['answer2']);
+    $answer3 = checkData($_POST['answer3']);
+
+    if (empty($question))
+    {
+        $error['question'] = 'U dient een vraag in te voeren';
+    }
+
+    if (empty($answer1))
+    {
+        $error['answer1'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (empty($answer2))
+    {
+        $error['answer2'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (empty($answer3))
+    {
+        $error['answer3'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'question')
+            {
+                $questionErr = $value;
+            }
+            else if($key == 'answer1')
+            {
+                $answerErr1 = $value;
+            }
+            else if($key == 'answer2')
+            {
+                $answerErr2 = $value;
+            }
+            else if($key == 'answer3')
+            {
+                $answerErr3 = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        savePoll($question, $answer1, $answer2, $answer3);
+    }
+}
+
+function savePoll($question, $answer1, $answer2, $answer3)
+{
+    global $db;
+
+    $stmt = $db->prepare('INSERT INTO poll(userID, question, answer1, answer2, answer3) VALUES (:userID, :question, :answer1, :answer2, :answer3)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':question' => $question,
+        ':answer1' => $answer1,
+        ':answer2' => $answer2,
+        ':answer3' => $answer3
+    ));
+
+    header('Location: dashboard.php?p=poll.php');
+}
+
+function getQuestion()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT question FROM poll');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getPoll()
+{
+    global $db;
+
+    $stmt = $db->prepare("SELECT question, answer1, answer2, answer3 FROM poll");
+    $stmt->execute();
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
 function getUserId()
 {
     global $db;

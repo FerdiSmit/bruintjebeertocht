@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc508f78-d635-45e8-ab09-7609cc37032d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createNews.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/delete.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/update.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createPoll.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/poll.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/classes/paginate.php" afterPath="$PROJECT_DIR$/includes/classes/paginate.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/functions.php" afterPath="$PROJECT_DIR$/includes/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news.php" afterPath="$PROJECT_DIR$/news.php" />
     </list>
     <ignored path="bruintjebeertocht.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +31,28 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="635">
+              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="poll.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/poll.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createPoll.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createPoll.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -54,8 +71,8 @@
       <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/news.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+            <state relative-caret-position="527">
+              <caret line="31" column="111" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="111" />
               <folding>
                 <marker date="1469110274278" expanded="true" signature="1016:1288" ph="..." />
                 <marker date="1469110274278" expanded="true" signature="1143:1288" ph="..." />
@@ -74,37 +91,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="601">
+              <caret line="53" column="86" selection-start-line="53" selection-start-column="86" selection-end-line="53" selection-end-column="86" />
+              <folding>
+                <marker date="1469123995066" expanded="true" signature="614:647" ph="SELECT title... news" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="427" column="84" selection-start-line="427" selection-start-column="84" selection-end-line="427" selection-end-column="84" />
+            <state relative-caret-position="720">
+              <caret line="523" column="20" selection-start-line="523" selection-start-column="20" selection-end-line="523" selection-end-column="20" />
               <folding>
-                <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-                <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-                <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-                <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-                <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-                <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-                <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-                <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-                <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-                <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-                <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-                <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-                <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-                <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-                <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+                <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+                <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+                <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+                <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+                <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+                <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+                <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+                <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+                <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+                <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+                <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+                <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+                <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+                <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+                <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+                <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+                <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+                <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
               </folding>
             </state>
           </provider>
@@ -115,38 +137,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-              <folding>
-                <marker date="1468937402265" expanded="true" signature="548:581" ph="SELECT title... news" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paginate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/classes/paginate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -190,14 +180,18 @@
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/includes/classes/Paginator.php" />
         <option value="$PROJECT_DIR$/createNews.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/classes/paginate.php" />
         <option value="$PROJECT_DIR$/update.php" />
         <option value="$PROJECT_DIR$/delete.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/news.php" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/createAnswers.php" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/createPoll.php" />
+        <option value="$PROJECT_DIR$/poll.php" />
         <option value="$PROJECT_DIR$/includes/functions.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -300,7 +294,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -400,12 +394,12 @@
       <workItem from="1468407656070" duration="11333000" />
       <workItem from="1468580480244" duration="9639000" />
       <workItem from="1468926737080" duration="8341000" />
-      <workItem from="1469101279912" duration="9080000" />
+      <workItem from="1469101279912" duration="15325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118438000" />
+    <option name="totallyTimeSpent" value="124683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1696" height="1026" extended-state="6" />
@@ -469,52 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/classes/password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/classes/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -542,21 +490,24 @@
         <state relative-caret-position="3366">
           <caret line="198" column="1" selection-start-line="198" selection-start-column="1" selection-end-line="198" selection-end-column="1" />
           <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+            <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+            <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+            <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+            <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
           </folding>
         </state>
       </provider>
@@ -574,21 +525,24 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+            <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+            <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+            <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+            <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
           </folding>
         </state>
       </provider>
@@ -613,21 +567,24 @@
         <state relative-caret-position="1105">
           <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
           <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+            <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+            <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+            <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+            <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
           </folding>
         </state>
       </provider>
@@ -645,21 +602,24 @@
         <state relative-caret-position="255">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+            <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+            <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+            <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+            <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
           </folding>
         </state>
       </provider>
@@ -775,14 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -797,16 +749,6 @@
         <state relative-caret-position="357">
           <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding>
-            <marker date="1468937402265" expanded="true" signature="548:581" ph="SELECT title... news" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,10 +776,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        <state relative-caret-position="17">
+          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -850,10 +800,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/news.php">
+    <entry file="file://$PROJECT_DIR$/createAnswers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="635">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createPoll.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="111" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="111" />
           <folding>
             <marker date="1469110274278" expanded="true" signature="1016:1288" ph="..." />
             <marker date="1469110274278" expanded="true" signature="1143:1288" ph="..." />
@@ -861,34 +835,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delete.php">
+    <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="427" column="84" selection-start-line="427" selection-start-column="84" selection-end-line="427" selection-end-column="84" />
+        <state relative-caret-position="720">
+          <caret line="523" column="20" selection-start-line="523" selection-start-column="20" selection-end-line="523" selection-end-column="20" />
           <folding>
-            <marker date="1469110456494" expanded="true" signature="3178:3231" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="3373:3417" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="4186:4294" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5393:5464" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="5681:5749" ph="..." />
-            <marker date="1469110456494" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
-            <marker date="1469110456494" expanded="true" signature="8213:8271" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8665" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:8673" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="8607:10744" ph="SELECT title... news" />
-            <marker date="1469110456494" expanded="true" signature="9956:10062" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10085" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="9956:10328" ph="UPDATE news " />
-            <marker date="1469110456494" expanded="true" signature="10520:10559" ph="DELETE FROM " />
-            <marker date="1469110456494" expanded="true" signature="10816:10867" ph="SELECT userI... users" />
+            <marker date="1469123487277" expanded="true" signature="3178:3231" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="3373:3417" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="4186:4294" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5393:5464" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="5681:5749" ph="..." />
+            <marker date="1469123487277" expanded="true" signature="7806:7936" ph="INSERT INTO news... " />
+            <marker date="1469123487277" expanded="true" signature="8213:8271" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8665" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:8673" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="8607:12927" ph="SELECT title... news" />
+            <marker date="1469123487277" expanded="true" signature="9956:10062" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10085" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="9956:10328" ph="UPDATE news " />
+            <marker date="1469123487277" expanded="true" signature="10520:10559" ph="DELETE FROM " />
+            <marker date="1469123487277" expanded="true" signature="12111:12230" ph="INSERT INTO poll... " />
+            <marker date="1469123487277" expanded="true" signature="12553:12578" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12743:12795" ph="SELECT quest... poll" />
+            <marker date="1469123487277" expanded="true" signature="12999:13050" ph="SELECT userI... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="53" column="86" selection-start-line="53" selection-start-column="86" selection-end-line="53" selection-end-column="86" />
+          <folding>
+            <marker date="1469123995066" expanded="true" signature="614:647" ph="SELECT title... news" />
           </folding>
         </state>
       </provider>
