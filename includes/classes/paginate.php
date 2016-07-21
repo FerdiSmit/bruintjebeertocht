@@ -16,23 +16,13 @@ class Paginate
 
         if ($stmt->rowCount() > 0)
         {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-            {
-                ?>
-                <tr>
-                    <td><?php echo $row['title']; ?></td>
-                    <td><?php echo $row['shortDesc']; ?></td>
-                </tr>
-                <?php
-            }
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
         }
         else
         {
-            ?>
-            <tr>
-                <td>Er is niets te zien...</td>
-            </tr>
-            <?php
+            $error = 'Er staat niets in de database';
+            return $error;
         }
     }
 
@@ -76,27 +66,25 @@ class Paginate
                     if ($current_page != 1)
                     {
                         $previous = $current_page - 1;
-                        echo "<a href='" . $self . "?page_no=1'>First</a>&nbsp;&nbsp;";
-                        echo "<a href='" . $self . "?page_no=" . $previous . "'>Previous</a>&nbsp;&nbsp;";
+                        echo "<li><a href='" . $self . "?page_no=" . $previous . "'>Previous</a></li>";
                     }
 
                     for ($i = 1; $i <= $total_no_of_pages; $i++)
                     {
                         if ($i == $current_page)
                         {
-                            echo "<strong><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></strong>&nbsp;&nbsp;";
+                            echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
                         }
                         else
                         {
-                            echo "<a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a>&nbsp;&nbsp;";
+                            echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
                         }
                     }
 
                     if ($current_page != $total_no_of_pages)
                     {
                         $next = $current_page + 1;
-                        echo "<a href='" . $self . "page_no=" . $next . "'>Next</a>&nbsp;&nbsp";
-                        echo "<a href='" . $self . "page_no=" . $total_no_of_pages . "'>Last</a>&nbsp;&nbsp;";
+                        echo "<li><a href='" . $self . "?page_no=" . $next . "'>Next</a></li>";
                     }
                     ?>
                 </td>

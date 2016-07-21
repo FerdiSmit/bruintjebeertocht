@@ -244,7 +244,7 @@ function login($username, $password)
     }
 }
 
-function checkNews()
+function checkCreateNews()
 {
     global $titleErr, $summaryErr, $startDateErr, $endDateErr, $descErr;
 
@@ -314,6 +314,118 @@ function saveNews($title, $summary, $startDate, $description)
         ':created_date' => $startDate,
         ':longDesc' => $description
     ));
+}
+
+function newsList()
+{
+    global $db;
+
+    $stmt = $db->prepare("SELECT newsID, title, created_date, last_updated FROM news");
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getNewsById()
+{
+    global $db;
+
+    $id = '';
+    $error = '';
+
+    if (isset($_GET['id']))
+    {
+        $id = $_GET['id'];
+    }
+    else
+    {
+        $error = 'Geen geldig nieuwsbericht';
+    }
+
+    $stmt = $db->prepare("SELECT title, shortDesc, longDesc FROM news WHERE newsID = :newsID");
+    $stmt->execute(array(
+        ':newsID' => $id
+    ));
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function updateNews()
+{
+    global $db;
+    global $updateTitleErr, $updateShortDescErr, $updateLongDescErr;
+
+    $id = $_GET['id'];
+
+    $title = checkData($_POST['title']);
+    $shortDesc = checkData($_POST['summary']);
+    $longDesc = $_POST['description'];
+
+    if (empty($title))
+    {
+        $error['title'] = 'De titelveld mag niet leeg zijn.';
+    }
+
+    if (empty($shortDesc))
+    {
+        $error['summary'] = 'Het veld voor de korte omschrijving mag niet leeg zijn.';
+    }
+
+    if (empty($longDesc))
+    {
+        $error['description'] = 'Het veld voor de uitgebreide omschrijving mag niet leeg zijn.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $updateTitleErr = $value;
+            }
+            else if ($key == 'summary')
+            {
+                $updateShortDescErr = $value;
+            }
+            else if ($key == 'description')
+            {
+                $updateLongDescErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $now = new DateTime();
+
+        $stmt = $db->prepare("UPDATE news SET title = :title, shortDesc = :shortDesc, last_updated = :last_updated, longDesc = :longDesc WHERE newsID = :newsID");
+        $stmt->execute(array(
+            ':title' => $title,
+            ':shortDesc' => $shortDesc,
+            ':last_updated' => $now->format('Y-m-d H:i:s'),
+            ':longDesc' => $longDesc,
+            ':newsID' => $id
+        ));
+
+        header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
+    }
+}
+
+function deleteNews()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare("DELETE FROM news WHERE newsID = :newsID");
+    $stmt->execute(array(
+        'newsID' => $id
+    ));
+
+    header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
 }
 
 function getUserId()

@@ -4,6 +4,8 @@ include('header.php');
 require('includes/functions.php');
 require('includes/classes/paginate.php');
 
+global $db;
+
 $paginate = new Paginate($db);
 ?>
 
@@ -17,16 +19,27 @@ $paginate = new Paginate($db);
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <?php
-                    $query = "SELECT title, shortDesc FROM news";
-                    $records_per_page = 10;
-                    $newQuery = $paginate->paging($query, $records_per_page);
-                    $paginate->dataView($newQuery);
-                    $paginate->pagingLink($query, $records_per_page);
-                    ?>
-                </tr>
+                <?php
+                $query = "SELECT title, shortDesc FROM news";
+                $records_per_page = 10;
+                $newQuery = $paginate->paging($query, $records_per_page);
+                $rows = $paginate->dataView($newQuery);
+
+                foreach ($rows as $row)
+                {
+                    echo "<tr>";
+                    echo "<td>" . $row['title'] . "</td>";
+                    echo "<td>" . $row['shortDesc'] . "</td>";
+                    echo "</tr>";
+                }
+
+                ?>
             </tbody>
         </table>
+        <ul class="pagination">
+            <?php
+            $paginate->pagingLink($query, $records_per_page);
+            ?>
+        </ul>
     </div>
 </div>

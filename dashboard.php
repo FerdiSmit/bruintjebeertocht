@@ -35,6 +35,18 @@ if (!$user->is_logged_in())
                     {
                         include('news.php');
                     }
+                    else if (isset($_GET['c']))
+                    {
+                        include('createNews.php');
+                    }
+                    else if (isset($_GET['u']))
+                    {
+                        include('update.php');
+                    }
+                    else if (isset($_GET['d']))
+                    {
+                        include('delete.php');
+                    }
                     ?>
                 </div>
             </div>
