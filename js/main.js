@@ -10,4 +10,8 @@ $(document).ready(function()
         autoplay: true,
         autoplaySpeed: 5000
     });
+
+    tinymce.init({
+        selector: '#newssection'
+    });
 });

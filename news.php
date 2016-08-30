@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <a href="dashboard.php?c=createNews.php">Toevoegen</a>
 
 <div class="row">
@@ -28,8 +24,8 @@
                     echo "<td>" . $result['title'] . "</td>";
                     echo "<td>" . $result['created_date'] . "</td>";
                     echo "<td>" . $result['last_updated'] . "</td>";
-                    echo "<td><a href='dashboard.php?u=update.php&id=$newsID'>Bewerken</a>";
-                    echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen?\")' href='dashboard.php?d=delete.php&id=$newsID'>Verwijderen</a>";
+                    echo "<td><a href='dashboard.php?u=updateNews.php&id=$newsID'>Bewerken</a>";
+                    echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen?\")' href='dashboard.php?d=deleteNews.php&id=$newsID'>Verwijderen</a>";
                     echo "</tr>";
                 }
                 ?>

@@ -10,7 +10,7 @@ if (!$user->is_logged_in())
 
 <script>
     tinymce.init({
-        selector: '#newssection'
+        selector: '#tinyEditor'
     });
 </script>
 
@@ -25,7 +25,7 @@ if (!$user->is_logged_in())
                 <div class="sidebar">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="?n=news.php">Nieuwsberichten</a></li>
-                        <li class="list-group-item"><a href="?b=about.php">Over BBT</a></li>
+                        <li class="list-group-item"><a href="?ao=aboutOverview.php">Over BBT</a></li>
                         <li class="list-group-item"><a href="?p=poll.php">Poll</a></li>
                     </ul>
                 </div>
@@ -43,11 +43,11 @@ if (!$user->is_logged_in())
                     }
                     else if (isset($_GET['u']))
                     {
-                        include('update.php');
+                        include('updateNews.php');
                     }
                     else if (isset($_GET['d']))
                     {
-                        include('delete.php');
+                        include('deleteNews.php');
                     }
                     else if (isset($_GET['p']))
                     {
@@ -57,9 +57,21 @@ if (!$user->is_logged_in())
                     {
                         include('createPoll.php');
                     }
-                    else if (isset($_GET['b']))
+                    else if (isset($_GET['ao']))
+                    {
+                        include('aboutOverview.php');
+                    }
+                    else if (isset($_GET['a']))
                     {
                         include('about.php');
+                    }
+                    else if (isset($_GET['ua']))
+                    {
+                        include('updateAbout.php');
+                    }
+                    else if (isset($_GET['da']))
+                    {
+                        include('deleteAbout.php');
                     }
                     ?>
                 </div>

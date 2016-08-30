@@ -39,7 +39,6 @@ $paginate = new Paginate($db);
                         <li><a href="#">Nieuws</a></li>
                         <li><a href="#">Route 2017</a></li>
                         <li><a href="#">Sponsors</a></li>
-                        <li><a href="#">Impressie 2016</a></li>
                         <li><a href="#">Foto's</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>

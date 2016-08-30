@@ -38,8 +38,8 @@ if (isset($_POST['submit']))
             ?>
         </div>
         <div class="form-group col-sm-7">
-            <label for="newssection">Uitgebreide omschrijving</label>
-            <textarea id="newssection" name="description"></textarea>
+            <label for="tinyEditor">Uitgebreide omschrijving</label>
+            <textarea id="tinyEditor" name="description"></textarea>
             <?php
             if (isset($descErr))
             {

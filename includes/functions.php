@@ -549,3 +549,151 @@ function getUserId()
 
     return $row['userID'];
 }
+
+function checkAbout()
+{
+    global $titleErr, $aboutErr;
+
+    $title = checkData($_POST['title']);
+    $about = checkData($_POST['about']);
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft een titel in.';
+    }
+
+    if (empty($about))
+    {
+        $error['about'] = 'Voert u alstublieft informatie over de BBT in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $titleErr = $value;
+            }
+            else if ($key == 'about')
+            {
+                $aboutErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        saveAbout($title, $about);
+    }
+}
+
+function saveAbout($title, $about)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO about(userID, title, about, created_at) VALUES(:userID, :title, :about, :created_at)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':title' => $title,
+        ':about' => $about,
+        ':created_at' => $now->format('Y-m-d H:i:s')
+    ));
+}
+
+function getAbout()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT aboutID, title, created_at, last_updated FROM about');
+    $stmt->execute();
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getAboutById()
+{
+    global $db;
+
+    $id = '';
+
+    if (isset($_GET['id']))
+    {
+        $id = $_GET['id'];
+    }
+
+    $stmt = $db->prepare('SELECT title, about FROM about WHERE aboutID = :aboutID');
+    $stmt->execute(array(
+        ':aboutID' => $id
+    ));
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function updateAbout()
+{
+    global $db, $updateTitleErr, $updateAboutErr;
+
+    $id = $_GET['id'];
+    $now = new DateTime();
+
+    $title = checkData($_POST['title']);
+    $about = checkData($_POST['about']);
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft een titel in.';
+    }
+
+    if (empty($about))
+    {
+        $error['about'] = 'Voert u alstublieft informatie over de BBT in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $updateTitleErr = $value;
+            }
+            else if ($key == 'about')
+            {
+                $updateAboutErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $stmt = $db->prepare('UPDATE about SET title = :title, about = :about, last_updated = :last_updated WHERE aboutID = :aboutID');
+        $stmt->execute(array(
+            ':title' => $title,
+            ':about' => $about,
+            ':last_updated' => $now->format('Y-m-d H:i:s'),
+            ':aboutID' => $id
+        ));
+
+        header('Location: dashboard.php?ao=aboutOverview.php');
+    }
+}
+
+function deleteAbout()
+{
+    echo 'test';
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('DELETE FROM about WHERE aboutID = :aboutID');
+    $stmt->execute(array(
+        ':aboutID' => $id
+    ));
+
+    header('Location: dashboard.php?ao=aboutOverview.php');
+}
