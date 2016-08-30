@@ -428,6 +428,17 @@ function deleteNews()
     header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
 }
 
+function getNews()
+{
+    global $db;
+
+    $stmt = $db->prepare("SELECT title, shortDesc, last_updated, longDesc FROM news WHERE last_updated = (SELECT MAX(last_updated) FROM news) LIMIT 5");
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
 function checkPoll()
 {
     global $questionErr, $answerErr1, $answerErr2, $answerErr3;

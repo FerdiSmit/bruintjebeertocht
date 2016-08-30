@@ -25,6 +25,7 @@ if (!$user->is_logged_in())
                 <div class="sidebar">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="?n=news.php">Nieuwsberichten</a></li>
+                        <li class="list-group-item"><a href="?b=about.php">Over BBT</a></li>
                         <li class="list-group-item"><a href="?p=poll.php">Poll</a></li>
                     </ul>
                 </div>
@@ -56,9 +57,17 @@ if (!$user->is_logged_in())
                     {
                         include('createPoll.php');
                     }
+                    else if (isset($_GET['b']))
+                    {
+                        include('about.php');
+                    }
                     ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<?php
+include('footer.php');
+?>

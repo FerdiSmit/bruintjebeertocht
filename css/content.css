@@ -1,0 +1,60 @@
+#header {
+    width: 100%;
+}
+
+
+.bruintje-beer
+{
+    width: 150px;
+    height: 150px;
+    margin-left: 100px;
+}
+
+.title {
+    font-family: 'Architects Daughter', cursive;
+}
+
+.title h1 {
+    font-size: 80px;
+}
+
+#menu {
+    height: 40px;
+    width: 100%;
+}
+
+#menu .navbar {
+    background-color: #f0d514;
+}
+
+#menu .nav a {
+    color: #000000;
+    font-weight: bold;
+}
+
+#menu .nav a:hover,
+#menu .nav a:active {
+    background-color: #c4000c;
+    color: #ffffff;
+}
+
+#slider {
+    width: 100%;
+}
+
+#leftside {
+    width: 20%;
+    height: 10px;
+    float: left;
+}
+
+#middle {
+    width: 60%;
+    background-color: #c3010c;
+    float: left;
+}
+
+#rightside {
+    width: 20%;
+    float: left;
+}
