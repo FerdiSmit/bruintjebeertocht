@@ -39,7 +39,12 @@ $paginate = new Paginate($db);
                         <li><a href="#">Nieuws</a></li>
                         <li><a href="#">Route 2017</a></li>
                         <li><a href="#">Sponsors</a></li>
-                        <li><a href="#">Foto's</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Foto's <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="album2016.php">Foto's 2016</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>

@@ -27,6 +27,7 @@ if (!$user->is_logged_in())
                         <li class="list-group-item"><a href="?n=news.php">Nieuwsberichten</a></li>
                         <li class="list-group-item"><a href="?ao=aboutOverview.php">Over BBT</a></li>
                         <li class="list-group-item"><a href="?p=poll.php">Poll</a></li>
+                        <li class="list-group-item"><a href="?alo=albumOverview.php">Fotoalbum</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,9 +62,9 @@ if (!$user->is_logged_in())
                     {
                         include('aboutOverview.php');
                     }
-                    else if (isset($_GET['a']))
+                    else if (isset($_GET['aa']))
                     {
-                        include('about.php');
+                        include('addAbout.php');
                     }
                     else if (isset($_GET['ua']))
                     {
@@ -72,6 +73,18 @@ if (!$user->is_logged_in())
                     else if (isset($_GET['da']))
                     {
                         include('deleteAbout.php');
+                    }
+                    else if (isset($_GET['alo']))
+                    {
+                        include('albumOverview.php');
+                    }
+                    else if (isset($_GET['ala']))
+                    {
+                        include('addAlbum.php');
+                    }
+                    else if (isset($_GET['ap']))
+                    {
+                        include('addPictures.php');
                     }
                     ?>
                 </div>

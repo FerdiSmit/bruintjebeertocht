@@ -4,7 +4,7 @@ $result = getAbout();
 
 if ($result === false)
 {
-    echo '<a href="dashboard.php?a=about.php">Toevoegen</a>';
+    echo '<a href="dashboard.php?aa=addAbout.php">Toevoegen</a>';
 }
 ?>
 

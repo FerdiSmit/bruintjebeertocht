@@ -697,3 +697,128 @@ function deleteAbout()
 
     header('Location: dashboard.php?ao=aboutOverview.php');
 }
+
+function checkAlbum()
+{
+    global $titleErr, $descErr;
+
+    $title = checkData($_POST['title']);
+    $desc = checkData($_POST['description']);
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft een titel in voor het album';
+    }
+
+    if (empty($desc))
+    {
+        $error['description'] = 'Voert u alstublieft een korte omschrijving in voor het album';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $titleErr = $value;
+            }
+            elseif ($key == 'description')
+            {
+                $descErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        saveAlbum($title, $desc);
+    }
+}
+
+function saveAlbum($title, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO album(userID, title, description, created_at) VALUES(:userID, :title, :description, :created_at)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':title' => $title,
+        ':description' => $description,
+        ':created_at' => $now->format('Y-m-d H:i:s')
+    ));
+}
+
+function getAlbums()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT albumID, title, description, created_at, updated_at FROM album');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function checkPictures()
+{
+    global $pictureErr, $typeErr, $sizeErr;
+
+    foreach ($_FILES['picture']['size'] as $file)
+    {
+        if ($file == 0)
+        {
+            $error['picture'] = 'Selecteert u alstublieft 1 of meerdere afbeeldingen';
+        }
+    }
+
+    foreach ($_FILES['picture']['type'] as $file)
+    {
+        if ($file != 'png' || $file != 'jpg' || $file != 'gif')
+        {
+            $error['type'] = 'Alleen PNG, JPG en GIF afbeeldingen zijn toegestaan.';
+        }
+    }
+
+    foreach ($_FILES['picture']['size'] as $file)
+    {
+        if ($file > 2097152)
+        {
+            $error['size'] = 'De afbeelding mag niet groter dan 2 MB zijn.';
+        }
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'picture')
+            {
+                $pictureErr = $value;
+            }
+            elseif ($key == 'type')
+            {
+                $typeErr = $value;
+            }
+            elseif ($key == 'size')
+            {
+                $sizeErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $picture = $_FILES['picture']['name'];
+        $size = $_FILES['picture']['size'];
+
+        savePictures($picture, $size);
+    }
+}
+
+function savePictures($picture, $size)
+{
+
+}
