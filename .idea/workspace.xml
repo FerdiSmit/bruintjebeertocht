@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc508f78-d635-45e8-ab09-7609cc37032d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addPictures.php" afterPath="$PROJECT_DIR$/addPictures.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/functions.php" afterPath="$PROJECT_DIR$/includes/functions.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/albums/alpedhuez.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/albums/ic_profile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/albums/index.jpg" afterPath="" />
     </list>
     <ignored path="bruintjebeertocht.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,7 +96,7 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
+            <state relative-caret-position="346">
               <caret line="829" column="76" selection-start-line="829" selection-start-column="76" selection-end-line="829" selection-end-column="76" />
               <folding>
                 <marker date="1473074880093" expanded="true" signature="3178:3231" ph="..." />
@@ -314,20 +314,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="albums" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -447,12 +433,12 @@
       <workItem from="1472638298384" duration="3089000" />
       <workItem from="1472722490810" duration="12211000" />
       <workItem from="1472816390866" duration="7737000" />
-      <workItem from="1473067400269" duration="6013000" />
+      <workItem from="1473067400269" duration="6596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195796000" />
+    <option name="totallyTimeSpent" value="196379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1696" height="1026" extended-state="6" />
@@ -733,7 +719,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
+        <state relative-caret-position="346">
           <caret line="829" column="76" selection-start-line="829" selection-start-column="76" selection-end-line="829" selection-end-column="76" />
           <folding>
             <marker date="1473074880093" expanded="true" signature="3178:3231" ph="..." />
