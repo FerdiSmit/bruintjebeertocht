@@ -2,7 +2,10 @@
 
 if (isset($_POST['submit']))
 {
-    checkPictures();
+    if (isset($_FILES['picture']))
+    {
+        checkPictures();
+    }
 }
 
 ?>
@@ -17,13 +20,17 @@ if (isset($_POST['submit']))
             {
                 echo '<span class="error">' . $pictureErr . '</span>';
             }
-            elseif (isset($typeErr))
+            elseif (isset($extensionErr))
             {
-                echo '<span class="error">' . $typeErr . '</span>';
+                echo '<span class="error">' . $extensionErr . '</span>';
             }
             elseif (isset($sizeErr))
             {
                 echo '<span class="error">' . $sizeErr . '</span>';
+            }
+            elseif (isset($existErr))
+            {
+                echo '<span class="error">' . $existErr . '</span>';
             }
             ?>
         </div>

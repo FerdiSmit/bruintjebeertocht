@@ -764,61 +764,90 @@ function getAlbums()
 
 function checkPictures()
 {
-    global $pictureErr, $typeErr, $sizeErr;
+    global $pictureErr, $extensionErr, $sizeErr, $existErr;
 
-    foreach ($_FILES['picture']['size'] as $file)
+    foreach ($_FILES['picture']['tmp_name'] as $key => $tmp_name)
     {
-        if ($file == 0)
+        $file_name = $_FILES['picture']['name'][$key];
+        $file_size = $_FILES['picture']['size'][$key];
+        $file_tmp = $_FILES['picture']['tmp_name'][$key];
+        $file_type = $_FILES['picture']['type'][$key];
+
+        $extensions = array("jpeg", "jpg", "png");
+
+        $file_ext = explode('.', $_FILES['picture']['name'][$key]);
+        $file_ext = end($file_ext);
+        $file_ext = strtolower(end(explode('.', $_FILES['picture']['name'][$key])));
+
+        if ($_FILES['picture']['name'][$key] == "")
         {
-            $error['picture'] = 'Selecteert u alstublieft 1 of meerdere afbeeldingen';
+            $error['pictures'] = 'Selecteert u alstublieft 1 of meerdere afbeeldingen.';
         }
-    }
 
-    foreach ($_FILES['picture']['type'] as $file)
-    {
-        if ($file != 'png' || $file != 'jpg' || $file != 'gif')
+        if (in_array($file_ext, $extensions) === false)
         {
-            $error['type'] = 'Alleen PNG, JPG en GIF afbeeldingen zijn toegestaan.';
+            $error['extension'] = 'Alleen JPEG, JPG en PNG afbeeldingen zijn toegestaan.';
         }
-    }
 
-    foreach ($_FILES['picture']['size'] as $file)
-    {
-        if ($file > 2097152)
+        if ($_FILES['picture']['size'][$key] == 0)
         {
-            $error['size'] = 'De afbeelding mag niet groter dan 2 MB zijn.';
+            $error['sizes'] = 'De afbeeldingen mogen niet groter dan 2MB zijn.';
         }
-    }
 
-    if (isset($error))
-    {
-        foreach ($error as $key => $value)
+
+        if (isset($error))
         {
-            if ($key == 'picture')
+            foreach ($error as $keys => $value)
             {
-                $pictureErr = $value;
-            }
-            elseif ($key == 'type')
-            {
-                $typeErr = $value;
-            }
-            elseif ($key == 'size')
-            {
-                $sizeErr = $value;
+                if ($keys == 'pictures')
+                {
+                    $pictureErr = $value;
+                }
+                elseif ($keys == 'extension')
+                {
+                    $extensionErr = $value;
+                }
+                elseif ($keys == 'sizes')
+                {
+                    $sizeErr = $value;
+                }
             }
         }
-    }
 
-    if (!isset($error))
-    {
-        $picture = $_FILES['picture']['name'];
-        $size = $_FILES['picture']['size'];
+        if (!isset($error))
+        {
+            $dir = '/../albums/';
 
-        savePictures($picture, $size);
+            if (is_dir(__DIR__ . $dir))
+            {
+                if (!file_exists(__DIR__ . $dir . $file_name))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $dir . $file_name);
+                    savePictures($file_name, $file_ext, $file_size);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $file_name . '). Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+
+            }
+        }
     }
 }
 
-function savePictures($picture, $size)
+function savePictures($file_name, $file_ext, $file_size)
 {
+    global $db;
 
+    $id = $_GET['id'];
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO picture(albumID, picture, size, extension, added_at) VALUES(:albumID, :picture, :size, :extension, :added_at)');
+    $stmt->execute(array(
+        ':albumID' => $id,
+        ':picture' => $file_name,
+        ':size' => $file_size,
+        ':extension' => $file_ext,
+        ':added_at' => $now->format('Y-m-d H:i:s')
+    ));
 }
