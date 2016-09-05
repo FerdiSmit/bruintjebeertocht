@@ -86,6 +86,10 @@ if (!$user->is_logged_in())
                     {
                         include('addPictures.php');
                     }
+                    else if (isset($_GET['po']))
+                    {
+                        include('pictureOverview.php');
+                    }
                     ?>
                 </div>
             </div>

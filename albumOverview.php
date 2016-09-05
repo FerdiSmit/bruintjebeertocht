@@ -27,7 +27,7 @@ $results = getAlbums();
                 $albumID = $result['albumID'];
 
                 echo '<tr>';
-                echo '<td>' . $result['title'] . '</td>';
+                echo "<td><a href='dashboard.php?po=pictureOverview.php&id=$albumID'>" . $result['title'] . "</a></td>";
                 echo '<td>' . $result['description'] . '</td>';
                 echo '<td>' . $result['created_at'] . '</td>';
                 if (empty($result['updated_at']))

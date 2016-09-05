@@ -700,7 +700,7 @@ function deleteAbout()
 
 function checkAlbum()
 {
-    global $titleErr, $descErr;
+    global $titleErr, $descErr, $albumExistErr;
 
     $title = checkData($_POST['title']);
     $desc = checkData($_POST['description']);
@@ -732,7 +732,17 @@ function checkAlbum()
 
     if (!isset($error))
     {
-        saveAlbum($title, $desc);
+        $albumDir = '/../albums/';
+
+        if (!is_dir(__DIR__ . $albumDir . $title))
+        {
+            mkdir(__DIR__ . $albumDir . $title, 0700);
+            saveAlbum($title, $desc);
+        }
+        else
+        {
+            $albumExistErr = 'Het album ' .  $title . ' bestaat al.';
+        }
     }
 }
 
@@ -749,6 +759,8 @@ function saveAlbum($title, $description)
         ':description' => $description,
         ':created_at' => $now->format('Y-m-d H:i:s')
     ));
+
+    header('Location: dashboard.php?alo=albumOverview.php');
 }
 
 function getAlbums()
@@ -760,6 +772,20 @@ function getAlbums()
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function getAlbumByNameAndId($id)
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT title FROM album WHERE albumID = :albumID');
+    $stmt->execute(array(
+        ':albumID' => $id
+    ));
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $results;
+
 }
 
 function checkPictures()
@@ -816,20 +842,37 @@ function checkPictures()
 
         if (!isset($error))
         {
-            $dir = '/../albums/';
+            $id = $_GET['id'];
 
-            if (is_dir(__DIR__ . $dir))
+            $albumDir = '/../albums/';
+
+            $dir = getAlbumByNameAndId($id);
+
+            if (!is_dir(__DIR__ . $albumDir . $dir['title']))
             {
-                if (!file_exists(__DIR__ . $dir . $file_name))
+                echo 'true';
+                mkdir(__DIR__ . $albumDir . $dir, 0700);
+                if (!file_exists(__DIR__ . $albumDir . $dir['title'] . '/' . $file_name))
                 {
-                    move_uploaded_file($file_tmp, __DIR__ . $dir . $file_name);
+                    move_uploaded_file($file_tmp, __DIR__ . $albumDir . $dir['title'] . '/' . $file_name);
                     savePictures($file_name, $file_ext, $file_size);
                 }
                 else
                 {
                     $existErr = 'Dit bestand bestaat al (' . $file_name . '). Geef het bestand een andere naam, of u kunt annuleren.';
                 }
-
+            }
+            else
+            {
+                if (!file_exists(__DIR__ . $albumDir . $dir['title'] . '/' . $file_name))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $albumDir . $dir['title'] . '/' . $file_name);
+                    savePictures($file_name, $file_ext, $file_size);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $file_name . '). Geef het bestand een andere naam, of u kunt annuleren.';
+                }
             }
         }
     }
@@ -850,4 +893,21 @@ function savePictures($file_name, $file_ext, $file_size)
         ':extension' => $file_ext,
         ':added_at' => $now->format('Y-m-d H:i:s')
     ));
+
+    header('Location: dashboard.php?alo=albumOverview.php');
+}
+
+function getPictures()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT picture FROM picture WHERE albumID = :albumID');
+    $stmt->execute(array(
+        ':albumID' => $id
+    ));
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
 }

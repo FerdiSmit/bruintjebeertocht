@@ -17,6 +17,10 @@ if (isset($_POST['submit']))
             {
                 echo '<span class="error">' . $titleErr . '</span>';
             }
+            elseif (isset($albumExistErr))
+            {
+                echo '<span class="error">' . $albumExistErr . '</span>';
+            }
             ?>
         </div>
         <div class="form-group col-sm-7">
