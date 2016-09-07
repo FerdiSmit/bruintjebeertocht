@@ -39,12 +39,31 @@ $paginate = new Paginate($db);
                         <li><a href="newspage.php">Nieuws</a></li>
                         <li><a href="#">Route 2017</a></li>
                         <li><a href="#">Sponsors</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Foto's <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="album2016.php">Foto's 2016</a></li>
-                            </ul>
-                        </li>
+                        <?php
+
+                        $countAlbums = count(getAlbums());
+
+                        if ($countAlbums != 0)
+                        {
+                            $albums = getAlbums();
+                            ?>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Foto's <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <?php
+                                            foreach ($albums as $album)
+                                            {
+                                                echo '<a href="albums.php?id=' . $album['albumID'] . '">' . $album['title'] . '</a>';
+                                            }
+                                        ?>
+                                    </li>
+                                </ul>
+                            </li>
+                            <?php
+                        }
+
+                        ?>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
