@@ -44,17 +44,39 @@
 
 #leftside {
     width: 20%;
-    height: 10px;
     float: left;
+    background-color: #c2000b;
 }
 
 #middle {
     width: 60%;
-    background-color: #c3010c;
     float: left;
+}
+
+#middle .news {
+    margin-left: 20px;
+}
+
+#middle .news .newsheader {
+    font-weight: bold;
+}
+
+#middle .newsdate {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#middle .newsdate .date {
+    margin-right: 20px;
+    font-style: italic;
+    font-size: 12px;
+}
+
+#middle .newscontent {
 }
 
 #rightside {
     width: 20%;
     float: left;
+    background-color: #c2000b
 }

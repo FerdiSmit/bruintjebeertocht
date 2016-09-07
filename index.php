@@ -35,8 +35,8 @@ $paginate = new Paginate($db);
                 <div class="collapse navbar-collapse" id="bbt-menu">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="#">Over BBT</a></li>
-                        <li><a href="#">Nieuws</a></li>
+                        <li><a href="overBBT.php">Over BBT</a></li>
+                        <li><a href="newspage.php">Nieuws</a></li>
                         <li><a href="#">Route 2017</a></li>
                         <li><a href="#">Sponsors</a></li>
                         <li class="dropdown">
@@ -64,37 +64,27 @@ $paginate = new Paginate($db);
 
     <div id="content">
         <div id="leftside">
-
+            Test
         </div>
         <div id="middle">
-            <?php
-            $results = getNews();
+            <div class="news">
+                <?php
+                $results = getNews();
 
-            foreach($results as $result)
-            {
-                echo '<div class="news">';
-                echo '<h3>' . $result['title'] . '</h3>';
-                echo '<p class="date">' . $result['last_updated'] . '</p>';
-                echo '<p>' . $result['shortDesc'] . '</p>';
-            }
-            ?>
+                foreach ($results as $result)
+                {
+                    echo '<h3 class="newsheader">' . $result['title'] . '</h3>';
+                    echo '<div class="newsdate"><p class="date">Bewerkt op: ' . $result['last_updated'] . '</p></div>';
+                    echo '<div class="newscontent"><p class="newsdesc">' . $result['shortDesc'] . '</p></div>';
+                    echo '<div class="newslink"><a href="newspage.php?id=' . $result['newsID'] . '">Lees meer...</a></div>';
+                    echo '<hr/>';
+                }
+                ?>
+            </div>
         </div>
         <div id="rightside">
-                <div>
-                    <?php
-                    $results = getPoll();
-
-                    if ($results !== false) {
-                        echo '<form role="form" method="post" class="form-horizontal">';
-                        echo '<div class="form-group col-sm-7">';
-                        echo '<label for="question">' . $results['question'] . '</label><br />';
-                        echo '<input type="radio" name="poll" value="' . $results['answer1'] . '">' . $results['answer1'] . '<br/>';
-                        echo '<input type="radio" name="poll" value="' . $results['answer2'] . '">' . $results['answer2'] . '<br/>';
-                        echo '<input type="radio" name="poll" value="' . $results['answer3'] . '">' . $results['answer3'] . '<br/>';
-                    }
-                    ?>
-                </div>
-            </div>
+            Test
+        </div>
     </div>
 <?php
 include('footer.php');

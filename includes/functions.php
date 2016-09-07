@@ -306,14 +306,17 @@ function saveNews($title, $summary, $startDate, $description)
 {
     global $db;
 
-    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, longDesc) VALUES (:userID, :title, :shortDesc, :created_date, :longDesc)');
+    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, last_updated, longDesc) VALUES (:userID, :title, :shortDesc, :created_date, :last_updated, :longDesc)');
     $stmt->execute(array(
         ':userID' => getUserId(),
         ':title' => $title,
         ':shortDesc' => $summary,
         ':created_date' => $startDate,
+        ':last_updated' => $startDate,
         ':longDesc' => $description
     ));
+
+    header('Location: dashboard.php?n=news.php');
 }
 
 function newsList()
@@ -332,18 +335,13 @@ function getNewsById()
     global $db;
 
     $id = '';
-    $error = '';
 
     if (isset($_GET['id']))
     {
         $id = $_GET['id'];
     }
-    else
-    {
-        $error = 'Geen geldig nieuwsbericht';
-    }
 
-    $stmt = $db->prepare("SELECT title, shortDesc, longDesc FROM news WHERE newsID = :newsID");
+    $stmt = $db->prepare("SELECT title, shortDesc, last_updated, longDesc FROM news WHERE newsID = :newsID");
     $stmt->execute(array(
         ':newsID' => $id
     ));
@@ -432,7 +430,7 @@ function getNews()
 {
     global $db;
 
-    $stmt = $db->prepare("SELECT title, shortDesc, last_updated, longDesc FROM news WHERE last_updated = (SELECT MAX(last_updated) FROM news) LIMIT 5");
+    $stmt = $db->prepare("SELECT newsID, title, shortDesc, last_updated, longDesc FROM news  LIMIT 5");
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -555,7 +553,7 @@ function checkAbout()
     global $titleErr, $aboutErr;
 
     $title = checkData($_POST['title']);
-    $about = checkData($_POST['about']);
+    $about = $_POST['about'];
 
     if (empty($title))
     {
@@ -601,13 +599,15 @@ function saveAbout($title, $about)
         ':about' => $about,
         ':created_at' => $now->format('Y-m-d H:i:s')
     ));
+
+    header('Location: dashboard.php?ao=aboutOverview.php');
 }
 
 function getAbout()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT aboutID, title, created_at, last_updated FROM about');
+    $stmt = $db->prepare('SELECT aboutID, title, about, created_at, last_updated FROM about');
     $stmt->execute();
     $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -642,7 +642,7 @@ function updateAbout()
     $now = new DateTime();
 
     $title = checkData($_POST['title']);
-    $about = checkData($_POST['about']);
+    $about = $_POST['about'];
 
     if (empty($title))
     {
