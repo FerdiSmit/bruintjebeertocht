@@ -82,6 +82,14 @@ if (!$user->is_logged_in())
                     {
                         include('addAlbum.php');
                     }
+                    else if (isset($_GET['ula']))
+                    {
+                        include('updateAlbum.php');
+                    }
+                    else if (isset($_GET['dla']))
+                    {
+                        include('deleteAlbum.php');
+                    }
                     else if (isset($_GET['ap']))
                     {
                         include('addPictures.php');

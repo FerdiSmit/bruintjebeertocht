@@ -39,8 +39,8 @@ $results = getAlbums();
                     echo '<td>' . $result['updated_at'] . '</td>';
                 }
                 echo "<td><a href='dashboard.php?ap=addPictures.php&id=$albumID'>Toevoegen</a></td>";
-                echo "<td><a href='dashboard.php?ula=updateAlbum&id='>Bewerken</a></td>";
-                echo "<td><a href='dashboard.php?dla=deleteAlbum&id='>Verwijderen</a></td>";
+                echo "<td><a href='dashboard.php?ula=updateAlbum.php&id=$albumID'>Bewerken</a></td>";
+                echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen? Al uw foto&apos;s worden ook verwijderd! \")' href='dashboard.php?dla=deleteAlbum.php&id=$albumID'>Verwijderen</a></td>";
                 echo '</tr>';
             }
             ?>

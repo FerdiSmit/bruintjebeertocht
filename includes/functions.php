@@ -774,6 +774,70 @@ function getAlbums()
     return $results;
 }
 
+function getAlbumById()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT title, description FROM album WHERE albumID = :albumID');
+    $stmt->execute(array(
+        ':albumID' => $id
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updateAlbum()
+{
+    global $db, $updateTitleErr, $updateDescErr;
+
+    $id = $_GET['id'];
+    $now = new DateTime();
+
+    $title = checkData($_POST['title']);
+    $description = checkData($_POST['description']);
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft een titel in voor het album.';
+    }
+
+    if (empty($description))
+    {
+        $error['description'] = 'Voert u alstublieft een korte omschrijving in voor het album';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $updateTitleErr = $value;
+            }
+            elseif ($key == 'description')
+            {
+                $updateDescErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $stmt = $db->prepare('UPDATE album SET title = :title, description = :description, updated_at = :updated_at WHERE albumID = :albumID');
+        $stmt->execute(array(
+            ':title' => $title,
+            ':description' => $description,
+            ':updated_at' => $now->format('Y-m-d H:i:s'),
+            ':albumID' => $id
+        ));
+
+        header('Location: dashboard.php?alo=albumOverview.php');
+    }
+}
+
 function getAlbumByNameAndId($id)
 {
     global $db;
@@ -786,6 +850,57 @@ function getAlbumByNameAndId($id)
 
     return $results;
 
+}
+
+function deleteAlbum()
+{
+    global $db;
+
+    $id = $_GET['id'];
+    $albums = getAlbumByNameAndId($id);
+    $albumDir = '/../albums/' . $albums['title'] . '/';
+
+    if (!getPictures())
+    {
+        if (is_dir(__DIR__ . $albumDir))
+        {
+            rmdir(__DIR__ . $albumDir);
+        }
+
+        $stmt = $db->prepare('DELETE FROM album WHERE albumID = :albumID');
+        $stmt->execute(array(
+            ':albumID' => $id
+        ));
+    }
+    else
+    {
+        $results = getPictures();
+
+        foreach ($results as $result)
+        {
+            if (file_exists(__DIR__ . $albumDir . $result['picture']))
+            {
+                unlink(__DIR__ . $albumDir . $result['picture']);
+            }
+        }
+
+        if (is_dir(__DIR__ . $albumDir))
+        {
+            rmdir(__DIR__ . $albumDir);
+        }
+
+        $stmt = $db->prepare('DELETE FROM picture WHERE albumID = :albumID');
+        $stmt->execute(array(
+            'albumID' => $id
+        ));
+
+        $stmt = $db->prepare('DELETE FROM album WHERE albumID = :albumID');
+        $stmt->execute(array(
+            'albumID' => $id
+        ));
+    }
+
+    header('Location: dashboard.php?alo=albumOverview.php');
 }
 
 function checkPictures()
