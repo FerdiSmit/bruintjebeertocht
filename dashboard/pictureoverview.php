@@ -1,11 +1,13 @@
 <?php
 
+include('dashboard.php');
+
 $results = getPictures();
 $id = $_GET['id'];
 
 $album = getAlbumByNameAndId($id);
 
-$albumDir = 'albums/' . $album['title'] . '/';
+$albumDir = '../albums/' . $album['title'] . '/';
 
 ?>
 
@@ -32,3 +34,7 @@ $albumDir = 'albums/' . $album['title'] . '/';
         </table>
     </div>
 </div>
+
+<?php
+include('footer.php');
+?>

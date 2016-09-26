@@ -1,5 +1,7 @@
 <?php
 
+include('dashboard.php');
+
 $result = getAlbumById();
 
 if (isset($_POST['submit']))
@@ -36,3 +38,7 @@ if (isset($_POST['submit']))
         </div>
     </form>
 </div>
+
+<?php
+include('footer.php');
+?>

@@ -223,9 +223,7 @@ function login($username, $password)
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
 
-        echo $_SESSION['username'];
-
-        header('Location: dashboard.php');
+        header('Location: dashboard/dashboard.php');
     }
     else
     {
@@ -242,6 +240,19 @@ function login($username, $password)
             }
         }
     }
+}
+
+function getUserByName($username)
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT username FROM users WHERE username = :username');
+    $stmt->execute(array(
+        ':username' => $username
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
 }
 
 function checkCreateNews()
@@ -423,7 +434,7 @@ function deleteNews()
         'newsID' => $id
     ));
 
-    header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
+    header('Location: news.php');
 }
 
 function getNews()
@@ -499,23 +510,26 @@ function savePoll($question, $answer1, $answer2, $answer3)
 {
     global $db;
 
-    $stmt = $db->prepare('INSERT INTO poll(userID, question, answer1, answer2, answer3) VALUES (:userID, :question, :answer1, :answer2, :answer3)');
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO poll(userID, question, answer1, answer2, answer3, created_at) VALUES (:userID, :question, :answer1, :answer2, :answer3, :created_at)');
     $stmt->execute(array(
         ':userID' => getUserId(),
         ':question' => $question,
         ':answer1' => $answer1,
         ':answer2' => $answer2,
-        ':answer3' => $answer3
+        ':answer3' => $answer3,
+        ':created_at' => $now->format('Y-m-d H:i:s')
     ));
 
-    header('Location: dashboard.php?p=poll.php');
+    header('Location: poll.php');
 }
 
 function getQuestion()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT question FROM poll');
+    $stmt = $db->prepare('SELECT pollID, question, created_at, updated_at FROM poll');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -531,6 +545,107 @@ function getPoll()
     $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function getPollById()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT pollID, question, answer1, answer2, answer3 FROM poll WHERE pollID = :pollID');
+    $stmt->execute(array(
+        ':pollID' => $id
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updatePoll()
+{
+    global $db, $questionUpdateErr, $answerUpdateErr1, $answerUpdateErr2, $answerUpdateErr3;
+
+    $question = checkData($_POST['question']);
+    $answer1 = checkData($_POST['answer1']);
+    $answer2 = checkData($_POST['answer2']);
+    $answer3 = checkData($_POST['answer3']);
+
+    $now = new DateTime();
+
+    $id = $_GET['id'];
+
+    if (empty($question))
+    {
+        $error['question'] = 'U dient een vraag in te voeren';
+    }
+
+    if (empty($answer1))
+    {
+        $error['answer1'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (empty($answer2))
+    {
+        $error['answer2'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (empty($answer3))
+    {
+        $error['answer3'] = 'U dient een antwoord in te vullen';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'question')
+            {
+                $questionUpdateErr = $value;
+            }
+            elseif ($key == 'answer1')
+            {
+                $answerUpdateErr1 = $value;
+            }
+            elseif ($key == 'answer2')
+            {
+                $answerUpdateErr2 = $value;
+            }
+            elseif ($key == 'answer3')
+            {
+                $answerUpdateErr3 = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $stmt = $db->prepare('UPDATE poll SET question = :question, answer1 = :answer1, answer2 = :answer2, answer3 = :answer3, updated_at = :updated_at WHERE pollID = :pollID');
+        $stmt->execute(array(
+            ':question' => $question,
+            ':answer1' => $answer1,
+            ':answer2' => $answer2,
+            ':answer3' => $answer3,
+            ':updated_at' => $now->format('Y-m-d H:i:s'),
+            ':pollID' => $id
+        ));
+
+        header('Location: poll.php');
+    }
+}
+
+function deletePoll()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('DELETE FROM poll WHERE pollID = :pollID');
+    $stmt->execute(array(
+        ':pollID' => $id
+    ));
+
+    header('Location: poll.php');
 }
 
 function getUserId()
@@ -600,7 +715,7 @@ function saveAbout($title, $about)
         ':created_at' => $now->format('Y-m-d H:i:s')
     ));
 
-    header('Location: dashboard.php?ao=aboutOverview.php');
+    header('Location: aboutOverview.php');
 }
 
 function getAbout()
@@ -679,13 +794,12 @@ function updateAbout()
             ':aboutID' => $id
         ));
 
-        header('Location: dashboard.php?ao=aboutOverview.php');
+        header('Location: aboutOverview.php');
     }
 }
 
 function deleteAbout()
 {
-    echo 'test';
     global $db;
 
     $id = $_GET['id'];
@@ -695,7 +809,7 @@ function deleteAbout()
         ':aboutID' => $id
     ));
 
-    header('Location: dashboard.php?ao=aboutOverview.php');
+    header('Location: aboutOverview.php');
 }
 
 function checkAlbum()
@@ -760,7 +874,7 @@ function saveAlbum($title, $description)
         ':created_at' => $now->format('Y-m-d H:i:s')
     ));
 
-    header('Location: dashboard.php?alo=albumOverview.php');
+    header('Location: dashboard/albumOverview.php');
 }
 
 function getAlbums()
@@ -900,7 +1014,7 @@ function deleteAlbum()
         ));
     }
 
-    header('Location: dashboard.php?alo=albumOverview.php');
+    header('Location: albumOverview.php');
 }
 
 function checkPictures()

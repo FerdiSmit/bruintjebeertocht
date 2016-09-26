@@ -1,5 +1,7 @@
 <?php
 
+include('dashboard.php');
+
 if (isset($_POST['submit']))
 {
     if (isset($_FILES['picture']))
@@ -39,3 +41,7 @@ if (isset($_POST['submit']))
         </div>
     </form>
 </div>
+
+<?php
+include('footer.php');
+?>

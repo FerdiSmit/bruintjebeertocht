@@ -38,7 +38,7 @@ class User extends Password{
     public function logout(){
         session_destroy();
 
-        header('Location: login.php');
+        header('Location: ../login.php');
     }
 
     public function is_logged_in(){

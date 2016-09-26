@@ -1,15 +1,17 @@
 
 <?php
+include('dashboard.php');
+
 $result = getAbout();
 
 if ($result === false)
 {
-    echo '<a href="dashboard.php?aa=addAbout.php">Toevoegen</a>';
+    echo '<a href="addAbout.php">Toevoegen</a>';
 }
 ?>
 
-<div class="row">
-    <div class="col-xs-12">
+<div id="about">
+    <div class="col-xs-10">
         <table class="table table-responsive table-condensed">
             <thead>
                 <tr>
@@ -29,11 +31,15 @@ if ($result === false)
                 echo "<td>" . $result['created_at'] . "</td>";
                 echo "<td>" . $result['last_updated'] . "</td>";
                 if ($result !== false) {
-                    echo "<td><a href='dashboard.php?ua=updateAbout.php&id=$aboutID.php'>Bewerken</a>";
-                    echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen ? \")' href='dashboard.php?da=deleteAbout.php&id=$aboutID'>Verwijderen</a>";
+                    echo "<td><a href='updateAbout.php?id=$aboutID.php'>Bewerken</a>";
+                    echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen ? \")' href='deleteAbout.php?id=$aboutID'>Verwijderen</a>";
                 }
             ?>
             </tbody>
         </table>
     </div>
 </div>
+
+<?php
+include('footer.php');
+?>

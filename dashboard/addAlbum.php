@@ -1,5 +1,7 @@
 <?php
 
+include('dashboard.php');
+
 if (isset($_POST['submit']))
 {
     checkAlbum();
@@ -38,3 +40,7 @@ if (isset($_POST['submit']))
         </div>
     </form>
 </div>
+
+<?php
+include('footer.php');
+?>

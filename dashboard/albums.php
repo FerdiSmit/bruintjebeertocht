@@ -12,7 +12,7 @@ $paginate = new Paginate($db);
     <div class="row">
         <div id="header col-xs-12">
             <div class="logo col-xs-3">
-                <img src="images/bruintje_beer_logo.png" alt="Bruintje Beer" class="img-responsive bruintje-beer">
+                <img src="../images/bruintje_beer_logo.png" alt="Bruintje Beer" class="img-responsive bruintje-beer">
             </div>
             <div class="title col-xs-9">
                 <h1>Bruintje Beer Tocht</h1>
@@ -34,9 +34,9 @@ $paginate = new Paginate($db);
                     </div>
                     <div class="collapse navbar-collapse" id="bbt-menu">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="overBBT.php">Over BBT</a></li>
-                            <li><a href="newspage.php">Nieuws</a></li>
+                            <li class="active"><a href="../index.php">Home</a></li>
+                            <li><a href="../overBBT.php">Over BBT</a></li>
+                            <li><a href="../newspage.php">Nieuws</a></li>
                             <li><a href="#">Route 2017</a></li>
                             <li><a href="#">Sponsors</a></li>
                             <?php
@@ -74,10 +74,10 @@ $paginate = new Paginate($db);
 
     <div class="row">
         <div id="slider">
-            <img src="images/bbt_1_1.jpg">
-            <img src="images/bbt_1_2.jpg">
-            <img src="images/bbt_1_3.jpg">
-            <img src="images/bbt_1_4.jpg">
+            <img src="../images/bbt_1_1.jpg">
+            <img src="../images/bbt_1_2.jpg">
+            <img src="../images/bbt_1_3.jpg">
+            <img src="../images/bbt_1_4.jpg">
         </div>
     </div>
 

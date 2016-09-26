@@ -1,13 +1,15 @@
 <?php
 
+include('dashboard.php');
+
 $results = getAlbums();
 
 ?>
 
-<a href="dashboard.php?ala=addAlbum.php">Album Toevoegen</a>
+<a href="addAlbum.php">Album Toevoegen</a>
 
 <div class="album">
-    <div class="col-xs-12">
+    <div class="col-xs-10">
         <table class="table table-responsive table-condensed">
             <thead>
                 <tr>
@@ -27,7 +29,7 @@ $results = getAlbums();
                 $albumID = $result['albumID'];
 
                 echo '<tr>';
-                echo "<td><a href='dashboard.php?po=pictureOverview.php&id=$albumID'>" . $result['title'] . "</a></td>";
+                echo "<td><a href='pictureoverview.php?id=$albumID'>" . $result['title'] . "</a></td>";
                 echo '<td>' . $result['description'] . '</td>';
                 echo '<td>' . $result['created_at'] . '</td>';
                 if (empty($result['updated_at']))
@@ -38,9 +40,9 @@ $results = getAlbums();
                 {
                     echo '<td>' . $result['updated_at'] . '</td>';
                 }
-                echo "<td><a href='dashboard.php?ap=addPictures.php&id=$albumID'>Toevoegen</a></td>";
-                echo "<td><a href='dashboard.php?ula=updateAlbum.php&id=$albumID'>Bewerken</a></td>";
-                echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen? Al uw foto&apos;s worden ook verwijderd! \")' href='dashboard.php?dla=deleteAlbum.php&id=$albumID'>Verwijderen</a></td>";
+                echo "<td><a href='addPictures.php?id=$albumID'>Toevoegen</a></td>";
+                echo "<td><a href='updateAlbum.php?id=$albumID'>Bewerken</a></td>";
+                echo "<td><a onclick='return confirm(\"Weet u zeker dat u dit bericht wilt verwijderen? Al uw foto&apos;s worden ook verwijderd! \")' href='deleteAlbum.php?id=$albumID'>Verwijderen</a></td>";
                 echo '</tr>';
             }
             ?>
@@ -48,3 +50,7 @@ $results = getAlbums();
         </table>
     </div>
 </div>
+
+<?php
+include('footer.php');
+?>
