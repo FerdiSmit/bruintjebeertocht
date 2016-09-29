@@ -2,38 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc508f78-d635-45e8-ab09-7609cc37032d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/dashboard.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/deletePoll.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/footer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/header.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dashboard/updatePoll.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/aboutOverview.php" afterPath="$PROJECT_DIR$/dashboard/aboutOverview.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/addAbout.php" afterPath="$PROJECT_DIR$/dashboard/addAbout.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/addAlbum.php" afterPath="$PROJECT_DIR$/dashboard/addAlbum.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/addPictures.php" afterPath="$PROJECT_DIR$/dashboard/addPictures.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/albumOverview.php" afterPath="$PROJECT_DIR$/dashboard/albumOverview.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/albums.php" afterPath="$PROJECT_DIR$/dashboard/albums.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/createNews.php" afterPath="$PROJECT_DIR$/dashboard/createNews.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/createPoll.php" afterPath="$PROJECT_DIR$/dashboard/createPoll.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/deleteAbout.php" afterPath="$PROJECT_DIR$/dashboard/deleteAbout.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/deleteAlbum.php" afterPath="$PROJECT_DIR$/dashboard/deleteAlbum.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/deleteNews.php" afterPath="$PROJECT_DIR$/dashboard/deleteNews.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/news.php" afterPath="$PROJECT_DIR$/dashboard/news.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pictureOverview.php" afterPath="$PROJECT_DIR$/dashboard/pictureoverview.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/poll.php" afterPath="$PROJECT_DIR$/dashboard/poll.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/updateAbout.php" afterPath="$PROJECT_DIR$/dashboard/updateAbout.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/updateAlbum.php" afterPath="$PROJECT_DIR$/dashboard/updateAlbum.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/updateNews.php" afterPath="$PROJECT_DIR$/dashboard/updateNews.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/albums.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/blueimp.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/ui-darkness.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.blueimp-gallery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/jquery.image-gallery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sponsors.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dashboard/albums.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/ajax-loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/config.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/fonts/slick.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/fonts/slick.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/fonts/slick.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/fonts/slick.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/slick-theme.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/slick-theme.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/slick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/slick.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/slick/slick.scss" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/slick/slick-theme.css" afterPath="$PROJECT_DIR$/css/slick-theme.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/slick/slick.css" afterPath="$PROJECT_DIR$/css/slick.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/slick/slick.min.js" afterPath="$PROJECT_DIR$/js/slick.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/content.css" afterPath="$PROJECT_DIR$/css/content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/footer.php" afterPath="$PROJECT_DIR$/dashboard/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/header.php" afterPath="$PROJECT_DIR$/dashboard/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/classes/user.php" afterPath="$PROJECT_DIR$/includes/classes/user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/functions.php" afterPath="$PROJECT_DIR$/includes/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui.js" afterPath="$PROJECT_DIR$/js/jquery-ui.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newspage.php" afterPath="$PROJECT_DIR$/newspage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overBBT.php" afterPath="$PROJECT_DIR$/overBBT.php" />
     </list>
     <ignored path="bruintjebeertocht.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,142 +63,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/dashboard.php">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="2057">
+              <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="news.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/news.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="162" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="162" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="poll.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/poll.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-              <folding>
-                <marker date="1474884124259" expanded="true" signature="738:766" ph="..." />
-                <marker date="1474884124259" expanded="true" signature="1267:1343" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="albumOverview.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/albumOverview.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createPoll.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/createPoll.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="33" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+            <state relative-caret-position="1485">
+              <caret line="1135" column="43" selection-start-line="1135" selection-start-column="43" selection-end-line="1135" selection-end-column="43" />
               <folding>
-                <marker date="1474884182771" expanded="true" signature="3178:3231" ph="SELECT usern... users" />
-                <marker date="1474884182771" expanded="true" signature="3373:3417" ph="SELECT email... users" />
-                <marker date="1474884182771" expanded="true" signature="4186:4294" ph="INSERT INTO users... " />
-                <marker date="1474884182771" expanded="true" signature="5393:5464" ph="SELECT userI... users" />
-                <marker date="1474884182771" expanded="true" signature="5681:5749" ph="UPDATE users... " />
-                <marker date="1474884182771" expanded="true" signature="6422:6448" ph="SELECT usern... users" />
-                <marker date="1474884182771" expanded="true" signature="6422:6475" ph="SELECT usern... users" />
-                <marker date="1474884182771" expanded="true" signature="8052:8211" ph="INSERT INTO news... " />
-                <marker date="1474884182771" expanded="true" signature="8578:8636" ph="SELECT newsI... news" />
-                <marker date="1474884182771" expanded="true" signature="8888:8968" ph="SELECT title... news" />
-                <marker date="1474884182771" expanded="true" signature="10251:10380" ph="UPDATE news " />
-                <marker date="1474884182771" expanded="true" signature="10815:10854" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="11018:11092" ph="SELECT newsI... news" />
-                <marker date="1474884182771" expanded="true" signature="12622:12766" ph="INSERT INTO poll... " />
-                <marker date="1474884182771" expanded="true" signature="13127:13184" ph="SELECT quest... poll" />
-                <marker date="1474884182771" expanded="true" signature="13349:13401" ph="SELECT quest... poll" />
-                <marker date="1474884182771" expanded="true" signature="13591:13674" ph="SELECT pollI... poll" />
-                <marker date="1474884182771" expanded="true" signature="15172:15317" ph="UPDATE poll " />
-                <marker date="1474884182771" expanded="true" signature="15735:15774" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="15981:16032" ph="SELECT userI... users" />
-                <marker date="1474884182771" expanded="true" signature="16998:17094" ph="INSERT INTO about... " />
-                <marker date="1474884182771" expanded="true" signature="17387:17452" ph="SELECT about... about" />
-                <marker date="1474884182771" expanded="true" signature="17702:17757" ph="SELECT title... about" />
-                <marker date="1474884182771" expanded="true" signature="18673:18775" ph="UPDATE about... " />
-                <marker date="1474884182771" expanded="true" signature="19124:19166" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="20440:20548" ph="INSERT INTO album... " />
-                <marker date="1474884182771" expanded="true" signature="20864:20933" ph="SELECT album... album" />
-                <marker date="1474884182771" expanded="true" signature="21127:21188" ph="SELECT title... album" />
-                <marker date="1474884182771" expanded="true" signature="22169:22279" ph="UPDATE album... " />
-                <marker date="1474884182771" expanded="true" signature="22643:22691" ph="SELECT title... album" />
-                <marker date="1474884182771" expanded="true" signature="23152:23194" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="23682:23726" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="23832:23874" ph="DELETE FROM " />
-                <marker date="1474884182771" expanded="true" signature="27135:27256" ph="INSERT INTO picture... " />
-                <marker date="1474884182771" expanded="true" signature="27629:27681" ph="SELECT pictu... picture" />
+                <marker date="1475069790126" expanded="true" signature="3178:3231" ph="SELECT usern... users" />
+                <marker date="1475069790126" expanded="true" signature="3373:3417" ph="SELECT email... users" />
+                <marker date="1475069790126" expanded="true" signature="4186:4294" ph="INSERT INTO users... " />
+                <marker date="1475069790126" expanded="true" signature="5393:5464" ph="SELECT userI... users" />
+                <marker date="1475069790126" expanded="true" signature="5681:5749" ph="UPDATE users... " />
+                <marker date="1475069790126" expanded="true" signature="6422:6448" ph="SELECT usern... users" />
+                <marker date="1475069790126" expanded="true" signature="6422:6475" ph="SELECT usern... users" />
+                <marker date="1475069790126" expanded="true" signature="8052:8182" ph="INSERT INTO news... " />
+                <marker date="1475069790126" expanded="true" signature="8494:8552" ph="SELECT newsI... news" />
+                <marker date="1475069790126" expanded="true" signature="8804:8884" ph="SELECT title... news" />
+                <marker date="1475069790126" expanded="true" signature="10167:10296" ph="UPDATE news " />
+                <marker date="1475069790126" expanded="true" signature="10731:10770" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="10934:11034" ph="SELECT newsI... news" />
+                <marker date="1475069790126" expanded="true" signature="12564:12708" ph="INSERT INTO poll... " />
+                <marker date="1475069790126" expanded="true" signature="13069:13126" ph="SELECT quest... poll" />
+                <marker date="1475069790126" expanded="true" signature="13291:13343" ph="SELECT quest... poll" />
+                <marker date="1475069790126" expanded="true" signature="13533:13616" ph="SELECT pollI... poll" />
+                <marker date="1475069790126" expanded="true" signature="15114:15259" ph="UPDATE poll " />
+                <marker date="1475069790126" expanded="true" signature="15677:15716" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="15923:15974" ph="SELECT userI... users" />
+                <marker date="1475069790126" expanded="true" signature="16940:17036" ph="INSERT INTO about... " />
+                <marker date="1475069790126" expanded="true" signature="17329:17394" ph="SELECT about... about" />
+                <marker date="1475069790126" expanded="true" signature="17644:17699" ph="SELECT title... about" />
+                <marker date="1475069790126" expanded="true" signature="18615:18717" ph="UPDATE about... " />
+                <marker date="1475069790126" expanded="true" signature="19066:19108" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="20382:20490" ph="INSERT INTO album... " />
+                <marker date="1475069790126" expanded="true" signature="20796:20865" ph="SELECT album... album" />
+                <marker date="1475069790126" expanded="true" signature="21059:21120" ph="SELECT title... album" />
+                <marker date="1475069790126" expanded="true" signature="22101:22211" ph="UPDATE album... " />
+                <marker date="1475069790126" expanded="true" signature="22575:22623" ph="SELECT title... album" />
+                <marker date="1475069790126" expanded="true" signature="23084:23126" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="23614:23658" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="23764:23806" ph="DELETE FROM " />
+                <marker date="1475069790126" expanded="true" signature="27113:27234" ph="INSERT INTO picture... " />
+                <marker date="1475069790126" expanded="true" signature="27607:27670" ph="SELECT pictu... picture" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updateNews.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/updateNews.php">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="updatePoll.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/updatePoll.php">
+      <file leaf-file-name="albums.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/albums.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="71" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deletePoll.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/deletePoll.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="510">
+              <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
               <folding>
-                <marker date="1474882015124" expanded="true" signature="111:150" ph="{...}" />
+                <marker date="1475139278743" expanded="true" signature="1417:1550" ph="..." />
+                <marker date="1475139278743" expanded="true" signature="1420:1501" ph="..." />
+                <marker date="1475139278743" expanded="true" signature="1893:1924" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
+      <file leaf-file-name="pictureoverview.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard/pictureoverview.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -208,8 +158,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -219,35 +169,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/jquery.form.js" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/upload.php" />
-        <option value="$PROJECT_DIR$/addPictures.php" />
-        <option value="$PROJECT_DIR$/addAlbum.php" />
-        <option value="$PROJECT_DIR$/css/back.css" />
         <option value="$PROJECT_DIR$/pictureOverview.php" />
         <option value="$PROJECT_DIR$/updateAlbum.php" />
         <option value="$PROJECT_DIR$/deleteAlbum.php" />
         <option value="$PROJECT_DIR$/albumOverview.php" />
-        <option value="$PROJECT_DIR$/css/content.css" />
-        <option value="$PROJECT_DIR$/newspage.php" />
-        <option value="$PROJECT_DIR$/overBBT.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/albums.php" />
         <option value="$PROJECT_DIR$/news.php" />
         <option value="$PROJECT_DIR$/includes/constants.php" />
         <option value="$PROJECT_DIR$/pages/header.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/dashboard/pictureOverview.php" />
-        <option value="$PROJECT_DIR$/dashboard/header.php" />
         <option value="$PROJECT_DIR$/dashboard/footer.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/dashboard/pictureoverview.php" />
         <option value="$PROJECT_DIR$/dashboard/login.php" />
         <option value="$PROJECT_DIR$/dashboard/logout.php" />
-        <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/dashboard/addAlbum.php" />
         <option value="$PROJECT_DIR$/dashboard/albumOverview.php" />
@@ -269,7 +204,22 @@
         <option value="$PROJECT_DIR$/dashboard/updateNews.php" />
         <option value="$PROJECT_DIR$/dashboard/updatePoll.php" />
         <option value="$PROJECT_DIR$/dashboard/poll.php" />
+        <option value="$PROJECT_DIR$/dashboard/albums.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/newspage.php" />
+        <option value="$PROJECT_DIR$/overBBT.php" />
+        <option value="$PROJECT_DIR$/sponsors.php" />
+        <option value="$PROJECT_DIR$/dashboard/header.php" />
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/includes/functions.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/css/ui-darkness.css" />
+        <option value="$PROJECT_DIR$/css/blueimp.css" />
+        <option value="$PROJECT_DIR$/js/jquery.blueimp-gallery.min.js" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/footer.php" />
+        <option value="$PROJECT_DIR$/albums.php" />
+        <option value="$PROJECT_DIR$/css/content.css" />
       </list>
     </option>
   </component>
@@ -314,6 +264,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,38 +281,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bruintjebeertocht" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,8 +314,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,17 +323,17 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\bruintjebeertocht\dashboard" />
-      <recent name="C:\xampp\htdocs\bruintjebeertocht\pages" />
-      <recent name="C:\xampp\htdocs\bruintjebeertocht" />
-      <recent name="C:\xampp\htdocs\bruintjebeertocht\unslider" />
-      <recent name="C:\xampp\htdocs\bruintjebeertocht\unslider\unslider-master" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\bruintjebeertocht\albums\BBT 2016" />
       <recent name="C:\xampp\htdocs\bruintjebeertocht\js" />
       <recent name="C:\xampp\htdocs\bruintjebeertocht\css" />
+      <recent name="C:\xampp\htdocs\bruintjebeertocht" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\bruintjebeertocht\css" />
+      <recent name="C:\xampp\htdocs\bruintjebeertocht\js" />
+      <recent name="C:\xampp\htdocs\bruintjebeertocht\dashboard" />
+      <recent name="C:\xampp\htdocs\bruintjebeertocht\pages" />
       <recent name="C:\xampp\htdocs\bruintjebeertocht" />
     </key>
   </component>
@@ -517,35 +435,38 @@
       <workItem from="1473259612003" duration="13513000" />
       <workItem from="1474617229855" duration="22299000" />
       <workItem from="1474727210287" duration="3126000" />
-      <workItem from="1474874951507" duration="6661000" />
+      <workItem from="1474874951507" duration="8048000" />
+      <workItem from="1474906745064" duration="10365000" />
+      <workItem from="1474957847809" duration="25054000" />
+      <workItem from="1475062063512" duration="17083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262333000" />
+    <option name="totallyTimeSpent" value="316222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1405868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14608802" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -558,7 +479,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22432762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14242055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -586,53 +507,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/albums/0index.jpg" />
-    <entry file="file://$PROJECT_DIR$/albums/1473073069.jpg" />
-    <entry file="file://$PROJECT_DIR$/albums/1473072999.jpg" />
-    <entry file="file://$PROJECT_DIR$/albums/1473073051.jpg" />
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/basic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="144" column="9" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newspage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="90" column="114" selection-start-line="90" selection-start-column="114" selection-end-line="90" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/overBBT.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="64" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -640,31 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/back.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/content.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="65" column="20" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/albums.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="101" column="38" selection-start-line="101" selection-start-column="38" selection-end-line="101" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="44" column="37" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,54 +561,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/login.php" />
     <entry file="file://$PROJECT_DIR$/dashboard/logout.php" />
-    <entry file="file://$PROJECT_DIR$/dashboard/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/pictureoverview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -773,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,17 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1474729385347" expanded="true" signature="277:348" ph="SELECT usern... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="162" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="162" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,9 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <marker date="1474882015124" expanded="true" signature="111:150" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="33" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,54 +703,201 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/albums.php" />
+    <entry file="file://$PROJECT_DIR$/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/back.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newspage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/overBBT.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.blueimp-gallery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="54" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/pictureoverview.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/albums.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
           <folding>
-            <marker date="1474884124259" expanded="true" signature="738:766" ph="..." />
-            <marker date="1474884124259" expanded="true" signature="1267:1343" ph="..." />
+            <marker date="1475139278743" expanded="true" signature="1417:1550" ph="..." />
+            <marker date="1475139278743" expanded="true" signature="1420:1501" ph="..." />
+            <marker date="1475139278743" expanded="true" signature="1893:1924" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="133" column="1" selection-start-line="133" selection-start-column="1" selection-end-line="133" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+        <state relative-caret-position="1485">
+          <caret line="1135" column="43" selection-start-line="1135" selection-start-column="43" selection-end-line="1135" selection-end-column="43" />
           <folding>
-            <marker date="1474884182771" expanded="true" signature="3178:3231" ph="SELECT usern... users" />
-            <marker date="1474884182771" expanded="true" signature="3373:3417" ph="SELECT email... users" />
-            <marker date="1474884182771" expanded="true" signature="4186:4294" ph="INSERT INTO users... " />
-            <marker date="1474884182771" expanded="true" signature="5393:5464" ph="SELECT userI... users" />
-            <marker date="1474884182771" expanded="true" signature="5681:5749" ph="UPDATE users... " />
-            <marker date="1474884182771" expanded="true" signature="6422:6448" ph="SELECT usern... users" />
-            <marker date="1474884182771" expanded="true" signature="6422:6475" ph="SELECT usern... users" />
-            <marker date="1474884182771" expanded="true" signature="8052:8211" ph="INSERT INTO news... " />
-            <marker date="1474884182771" expanded="true" signature="8578:8636" ph="SELECT newsI... news" />
-            <marker date="1474884182771" expanded="true" signature="8888:8968" ph="SELECT title... news" />
-            <marker date="1474884182771" expanded="true" signature="10251:10380" ph="UPDATE news " />
-            <marker date="1474884182771" expanded="true" signature="10815:10854" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="11018:11092" ph="SELECT newsI... news" />
-            <marker date="1474884182771" expanded="true" signature="12622:12766" ph="INSERT INTO poll... " />
-            <marker date="1474884182771" expanded="true" signature="13127:13184" ph="SELECT quest... poll" />
-            <marker date="1474884182771" expanded="true" signature="13349:13401" ph="SELECT quest... poll" />
-            <marker date="1474884182771" expanded="true" signature="13591:13674" ph="SELECT pollI... poll" />
-            <marker date="1474884182771" expanded="true" signature="15172:15317" ph="UPDATE poll " />
-            <marker date="1474884182771" expanded="true" signature="15735:15774" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="15981:16032" ph="SELECT userI... users" />
-            <marker date="1474884182771" expanded="true" signature="16998:17094" ph="INSERT INTO about... " />
-            <marker date="1474884182771" expanded="true" signature="17387:17452" ph="SELECT about... about" />
-            <marker date="1474884182771" expanded="true" signature="17702:17757" ph="SELECT title... about" />
-            <marker date="1474884182771" expanded="true" signature="18673:18775" ph="UPDATE about... " />
-            <marker date="1474884182771" expanded="true" signature="19124:19166" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="20440:20548" ph="INSERT INTO album... " />
-            <marker date="1474884182771" expanded="true" signature="20864:20933" ph="SELECT album... album" />
-            <marker date="1474884182771" expanded="true" signature="21127:21188" ph="SELECT title... album" />
-            <marker date="1474884182771" expanded="true" signature="22169:22279" ph="UPDATE album... " />
-            <marker date="1474884182771" expanded="true" signature="22643:22691" ph="SELECT title... album" />
-            <marker date="1474884182771" expanded="true" signature="23152:23194" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="23682:23726" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="23832:23874" ph="DELETE FROM " />
-            <marker date="1474884182771" expanded="true" signature="27135:27256" ph="INSERT INTO picture... " />
-            <marker date="1474884182771" expanded="true" signature="27629:27681" ph="SELECT pictu... picture" />
+            <marker date="1475069790126" expanded="true" signature="3178:3231" ph="SELECT usern... users" />
+            <marker date="1475069790126" expanded="true" signature="3373:3417" ph="SELECT email... users" />
+            <marker date="1475069790126" expanded="true" signature="4186:4294" ph="INSERT INTO users... " />
+            <marker date="1475069790126" expanded="true" signature="5393:5464" ph="SELECT userI... users" />
+            <marker date="1475069790126" expanded="true" signature="5681:5749" ph="UPDATE users... " />
+            <marker date="1475069790126" expanded="true" signature="6422:6448" ph="SELECT usern... users" />
+            <marker date="1475069790126" expanded="true" signature="6422:6475" ph="SELECT usern... users" />
+            <marker date="1475069790126" expanded="true" signature="8052:8182" ph="INSERT INTO news... " />
+            <marker date="1475069790126" expanded="true" signature="8494:8552" ph="SELECT newsI... news" />
+            <marker date="1475069790126" expanded="true" signature="8804:8884" ph="SELECT title... news" />
+            <marker date="1475069790126" expanded="true" signature="10167:10296" ph="UPDATE news " />
+            <marker date="1475069790126" expanded="true" signature="10731:10770" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="10934:11034" ph="SELECT newsI... news" />
+            <marker date="1475069790126" expanded="true" signature="12564:12708" ph="INSERT INTO poll... " />
+            <marker date="1475069790126" expanded="true" signature="13069:13126" ph="SELECT quest... poll" />
+            <marker date="1475069790126" expanded="true" signature="13291:13343" ph="SELECT quest... poll" />
+            <marker date="1475069790126" expanded="true" signature="13533:13616" ph="SELECT pollI... poll" />
+            <marker date="1475069790126" expanded="true" signature="15114:15259" ph="UPDATE poll " />
+            <marker date="1475069790126" expanded="true" signature="15677:15716" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="15923:15974" ph="SELECT userI... users" />
+            <marker date="1475069790126" expanded="true" signature="16940:17036" ph="INSERT INTO about... " />
+            <marker date="1475069790126" expanded="true" signature="17329:17394" ph="SELECT about... about" />
+            <marker date="1475069790126" expanded="true" signature="17644:17699" ph="SELECT title... about" />
+            <marker date="1475069790126" expanded="true" signature="18615:18717" ph="UPDATE about... " />
+            <marker date="1475069790126" expanded="true" signature="19066:19108" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="20382:20490" ph="INSERT INTO album... " />
+            <marker date="1475069790126" expanded="true" signature="20796:20865" ph="SELECT album... album" />
+            <marker date="1475069790126" expanded="true" signature="21059:21120" ph="SELECT title... album" />
+            <marker date="1475069790126" expanded="true" signature="22101:22211" ph="UPDATE album... " />
+            <marker date="1475069790126" expanded="true" signature="22575:22623" ph="SELECT title... album" />
+            <marker date="1475069790126" expanded="true" signature="23084:23126" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="23614:23658" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="23764:23806" ph="DELETE FROM " />
+            <marker date="1475069790126" expanded="true" signature="27113:27234" ph="INSERT INTO picture... " />
+            <marker date="1475069790126" expanded="true" signature="27607:27670" ph="SELECT pictu... picture" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="95" column="7" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sponsors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/ui-darkness.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="410" column="23" selection-start-line="410" selection-start-column="23" selection-end-line="410" selection-end-column="23" />
+          <folding>
+            <element signature="e#11526#11611#2" expanded="true" />
+            <element signature="e#12363#14712#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/blueimp.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6502" selection-start-line="0" selection-start-column="6502" selection-end-line="0" selection-end-column="6502" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2057">
+          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

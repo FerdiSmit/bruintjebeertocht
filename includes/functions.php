@@ -317,17 +317,16 @@ function saveNews($title, $summary, $startDate, $description)
 {
     global $db;
 
-    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, last_updated, longDesc) VALUES (:userID, :title, :shortDesc, :created_date, :last_updated, :longDesc)');
+    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, longDesc) VALUES (:userID, :title, :shortDesc, :created_date, :longDesc)');
     $stmt->execute(array(
         ':userID' => getUserId(),
         ':title' => $title,
         ':shortDesc' => $summary,
         ':created_date' => $startDate,
-        ':last_updated' => $startDate,
         ':longDesc' => $description
     ));
 
-    header('Location: dashboard.php?n=news.php');
+    header('Location: news.php');
 }
 
 function newsList()
@@ -441,7 +440,7 @@ function getNews()
 {
     global $db;
 
-    $stmt = $db->prepare("SELECT newsID, title, shortDesc, last_updated, longDesc FROM news  LIMIT 5");
+    $stmt = $db->prepare("SELECT newsID, title, shortDesc, last_updated, longDesc FROM news ORDER BY created_date DESC LIMIT 5");
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -874,7 +873,7 @@ function saveAlbum($title, $description)
         ':created_at' => $now->format('Y-m-d H:i:s')
     ));
 
-    header('Location: dashboard/albumOverview.php');
+    header('Location: albumOverview.php');
 }
 
 function getAlbums()
@@ -1077,6 +1076,8 @@ function checkPictures()
 
             $dir = getAlbumByNameAndId($id);
 
+            echo __DIR__ . $albumDir . $dir;
+
             if (!is_dir(__DIR__ . $albumDir . $dir['title']))
             {
                 echo 'true';
@@ -1132,7 +1133,7 @@ function getPictures()
 
     $id = $_GET['id'];
 
-    $stmt = $db->prepare('SELECT picture FROM picture WHERE albumID = :albumID');
+    $stmt = $db->prepare('SELECT pictureID, picture FROM picture WHERE albumID = :albumID');
     $stmt->execute(array(
         ':albumID' => $id
     ));

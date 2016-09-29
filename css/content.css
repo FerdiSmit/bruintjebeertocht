@@ -1,26 +1,52 @@
-#header {
+body {
+    background-color: #c2000b;
+    position: relative;
+    z-index: -1;
+}
+
+.container {
     width: 100%;
 }
 
+.container, .row, .col-xs-1,
+.col-xs-2, .col-xs-3, .col-xs-4,
+.col-xs-5, .col-xs-6, .col-xs-7,
+.col-xs-8, .col-xs-9, .col-xs-10,
+.col-xs-11, .col-xs-12{
+    margin: 0;
+    padding: 0;
+}
 
-.bruintje-beer
-{
+#header {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+#header .bruintje-beer {
     width: 150px;
     height: 150px;
-    margin-left: 100px;
+    margin-left: 80px;
 }
 
-.title {
+#header .ftcmusselkanaal {
+    width: 200px;
+    height: 100px;
+    margin-top: 25px;
+    margin-left: 60px;
+}
+
+#header .title {
     font-family: 'Architects Daughter', cursive;
+    margin-top: 20px;
 }
 
-.title h1 {
-    font-size: 80px;
+#header .title h1 {
+    font-size: 70px;
 }
 
 #menu {
-    height: 40px;
-    width: 100%;
+    margin-bottom: -20px;
 }
 
 #menu .navbar {
@@ -34,49 +60,93 @@
 
 #menu .nav a:hover,
 #menu .nav a:active {
-    background-color: #c4000c;
+    background-color: #c2000b;
     color: #ffffff;
 }
 
-#slider {
-    width: 100%;
+#flexbox {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
 }
 
-#leftside {
-    width: 20%;
-    float: left;
-    background-color: #c2000b;
+#leftside .leftside-header {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+#leftside .leftside-name {
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+#leftside .leftside-image {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #middle {
-    width: 60%;
-    float: left;
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
 }
 
 #middle .news {
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 #middle .news .newsheader {
     font-weight: bold;
 }
 
-#middle .newsdate {
+#middle .news .newsdate {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#middle .newsdate .date {
+#middle .news .date {
     margin-right: 20px;
     font-style: italic;
     font-size: 12px;
 }
 
-#middle .newscontent {
+#middle .about .abouttitle {
+    font-weight: bold;
 }
 
-#rightside {
-    width: 20%;
-    float: left;
-    background-color: #c2000b
+#middle .about {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#middle .sponsors {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#middle .header-sponsors {
+    text-align: center;
+}
+
+#rightside .hoofsponsor-image {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#rightside .hoofdsponsors .rightside-header {
+    text-align: center;
+    color: #ffffff;
+}
+
+#rightside .hoofdsponsors .head-sponsors {
+    margin-bottom: 10px;
+}
+
+#footer {
+    background-color: #f0d514;
 }

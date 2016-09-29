@@ -1,6 +1,5 @@
 <?php
 include('includes/functions.php');
-require('header.php');
 
 if ($user->is_logged_in())
 {
@@ -13,7 +12,15 @@ if (isset($_POST['submit']))
 }
 
 ?>
+<head>
+    <title><?php if (isset($title)) { echo $title; }?></title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
