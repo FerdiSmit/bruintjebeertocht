@@ -50,9 +50,9 @@ require('includes/classes/paginate.php');
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="overBBT.php">Over BBT</a></li>
                         <li><a href="newspage.php">Nieuws</a></li>
-                        <li><a href="#">Route 2017</a></li>
+                        <li><a href="routes.php">Route 2017</a></li>
                         <li><a href="sponsors.php">Sponsoren</a></li>
-                        <li><a href="#">Ambassadeurs</a></li>
+                        <li><a href="ambassadorspage.php">Ambassadeurs</a></li>
                         <?php
                         $countAlbums = count(getAlbums());
 
@@ -76,9 +76,9 @@ require('includes/classes/paginate.php');
                             <?php
                         }
                         ?>
-                        <li><a href="#">Goede Doelen</a></li>
-                        <li><a href="#">Magazine</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="charities.php">Goede Doelen</a></li>
+                        <li><a href="magazine.php">Magazine</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
             </nav>

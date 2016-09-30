@@ -1262,7 +1262,7 @@ function getRoutes()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT routeID, title, added_at, updated_at FROM route');
+    $stmt = $db->prepare('SELECT routeID, title, map, description, added_at, updated_at FROM route');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -1591,7 +1591,7 @@ function getAmbassadors()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT ambassadorID, ambassador, added_at, updated_at FROM ambassador');
+    $stmt = $db->prepare('SELECT ambassadorID, ambassador, image, description, added_at, updated_at FROM ambassador');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -1920,7 +1920,7 @@ function getCharities()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT charityID, title, added_at, updated_at FROM charity');
+    $stmt = $db->prepare('SELECT charityID, title, image, description, added_at, updated_at FROM charity');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -2129,4 +2129,9 @@ function deleteCharity()
     ));
 
     header('Location: charity.php');
+}
+
+function checkMagazine()
+{
+    var_dump($_FILES['magazine']);
 }

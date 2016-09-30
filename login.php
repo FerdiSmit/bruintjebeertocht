@@ -3,7 +3,7 @@ include('includes/functions.php');
 
 if ($user->is_logged_in())
 {
-    header('Location: dashboard.php');
+    header('Location: dashboard/dashboard.php');
 }
 
 if (isset($_POST['submit']))

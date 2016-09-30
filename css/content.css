@@ -133,6 +133,95 @@ body {
     text-align: center;
 }
 
+#middle .route-title {
+    margin-left: 20px;
+}
+
+#middle .route-title h3 {
+    font-weight: bold;
+}
+
+#middle .route-image {
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#middle .route-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#middle .ambassador-name {
+    margin-left: 20px;
+}
+
+#middle .ambassador-image {
+    float: right;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#middle .ambassador-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#middle .ambassador-name h3 {
+    font-weight: bold;
+}
+
+#middle .charity-title {
+    margin-left: 20px;
+}
+
+#middle .charity-title h3 {
+    font-weight: bold;
+}
+
+#middle .charity-image {
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#middle .charity-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#middle .magazine-title {
+    text-align: center;
+}
+
+#middle .magazine-title h3 {
+    font-weight: bold;
+}
+
+#middle .magazine-description {
+    text-align: center;
+}
+
+#middle .magazine-image {
+    margin-bottom: 20px;
+}
+
+#middle .contact-header {
+    margin-left: 20px;
+}
+
+#middle .contact-header h3 {
+    font-weight: bold;
+}
+
+#middle .contact-body {
+    margin-left: 20px;
+}
+
 #rightside .hoofsponsor-image {
     margin-left: 10px;
     margin-right: 10px;
