@@ -1025,7 +1025,6 @@ function checkPictures()
         $file_name = $_FILES['picture']['name'][$key];
         $file_size = $_FILES['picture']['size'][$key];
         $file_tmp = $_FILES['picture']['tmp_name'][$key];
-        $file_type = $_FILES['picture']['type'][$key];
 
         $extensions = array("jpeg", "jpg", "png");
 
@@ -1140,4 +1139,994 @@ function getPictures()
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function checkRoute()
+{
+    global $titleErr, $mapErr, $sizeErr, $extErr, $descErr;
+
+    $title = checkData($_POST['title']);
+    $filename = $_FILES['map']['name'];
+    $filesize = $_FILES['map']['size'];
+    $filetmp = $_FILES['map']['tmp_name'];
+    $file_ext = strtolower(end(explode('.', $_FILES['map']['name'])));
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft een titel in voor de route.';
+    }
+
+    if ($filename == "")
+    {
+        $error['map'] = 'Selecteert u altublieft een route.';
+    }
+
+    if ($filesize == 0)
+    {
+        $error['sizes'] = 'De afbeeldingen mogen niet groter dan 2MB zijn.';
+    }
+
+    if (in_array($file_ext, $extensions) === false)
+    {
+        $error['extension'] = 'Alleen JPEG, JPG en PNG afbeeldingen zijn toegestaan.';
+    }
+
+    if (empty($description))
+    {
+        $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $titleErr = $value;
+            }
+            elseif ($key == 'map')
+            {
+                $mapErr = $value;
+            }
+            elseif ($key == 'sizes')
+            {
+                $sizeErr = $value;
+            }
+            elseif ($key == 'extension')
+            {
+                $extErr = $value;
+            }
+            elseif ($key == 'description')
+            {
+                $descErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $routeDir = '/../routes/';
+
+        if (!is_dir(__DIR__ . $routeDir))
+        {
+            mkdir(__DIR__ . $routeDir, 0700);
+            if (!file_exists(__DIR__ . $routeDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $routeDir . $filename);
+                saveRoute($title, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaa al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+        else
+        {
+            if (!file_exists(__DIR__ . $routeDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $routeDir . $filename);
+                saveRoute($title, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaa al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+    }
+}
+
+function saveRoute($title, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO route(userID, title, map, size, extension, description, added_at) VALUES(:userID, :title, :map, :size, :extension, :description, :added_at)');
+    $stmt->execute(array(
+        ':userID' => getuserId(),
+        ':title' => $title,
+        ':map' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':added_at' => $now->format('Y-m-d H:i:s')
+    ));
+
+    header('Location: route.php');
+}
+
+function getRoutes()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT routeID, title, added_at, updated_at FROM route');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getRouteById()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT title, map, description FROM route WHERE routeID = :routeID');
+    $stmt->execute(array(
+        ':routeID' => $id
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updateRoute()
+{
+    global $titleUpdateErr, $sizeUpdateErr, $extensionUpdateErr, $descriptionUpdateErr;
+
+    $title = checkData($_POST['title']);
+    $filename = $_FILES['map']['name'];
+    $filesize = $_FILES['map']['size'];
+    $file_ext = strtolower(end(explode('.', $_FILES['map']['name'])));
+    $file_tmp = $_FILES['map']['tmp_name'];
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    $id = $_GET['id'];
+
+    if (empty($filename))
+    {
+        if (empty($title))
+        {
+            $error['title'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'title')
+                {
+                    $titleUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            saveRouteWithoutImage($id, $title, $description);
+        }
+    }
+
+    if (!empty($filename))
+    {
+        if (empty($title))
+        {
+            $error['title'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if ($filesize == 0)
+        {
+            $error['size'] = 'De afbeelding mag niet groter zijn dan 2MB.';
+        }
+
+        if (in_array($file_ext, $extensions) === false)
+        {
+            $error['extension'] = 'Alleen JPEG, JPG en PNG zijn toegestaan.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'title')
+                {
+                    $titleUpdateErr = $value;
+                }
+                elseif ($key == 'size')
+                {
+                    $sizeUpdateErr = $value;
+                }
+                elseif ($key == 'extension')
+                {
+                    $extensionUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            $routeDir = '/../routes/';
+
+            if (!is_dir(__DIR__ . $routeDir))
+            {
+                mkdir(__DIR__ . $routeDir, 0700);
+                if (!file_exists(__DIR__ . $routeDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $routeDir . $filename);
+                    saveRouteWithImage($id, $title, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+            else
+            {
+                if (!file_exists(__DIR__ . $routeDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $routeDir . $filename);
+                    saveRouteWithImage($id, $title, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+        }
+    }
+}
+
+function saveRouteWithoutImage($id, $title, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE route SET title = :title, description = :description, updated_at = :updated_at WHERE routeID = :routeID');
+    $stmt->execute(array(
+        ':title' => $title,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':routeID' => $id
+    ));
+
+    header('Location: route.php');
+}
+
+function saveRouteWithImage($id, $title, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE route SET title = :title, map = :map, size = :size, extension = :extension, description = :description, updated_at = :updated_at WHERE routeID = :routeID');
+    $stmt->execute(array(
+        ':title' => $title,
+        ':map' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':routeID' => $id
+    ));
+
+    header('Location: route.php');
+}
+
+function deleteRoute()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $result = getRouteById();
+
+    $routeDir = '/../routes/';
+
+    if (file_exists(__DIR__ . $routeDir . $result['map']))
+    {
+        unlink(__DIR__ . $routeDir . $result['map']);
+    }
+
+    $stmt = $db->prepare('DELETE FROM route WHERE routeID = :routeID');
+    $stmt->execute(array(
+        ':routeID' => $id
+    ));
+
+    header('Location: route.php');
+}
+
+function checkAmbassador()
+{
+    global $nameErr, $ambassadorErr, $sizeErr, $extErr, $descErr;
+
+    $name = checkData($_POST['name']);
+    $filename = $_FILES['ambassador']['name'];
+    $filesize = $_FILES['ambassador']['size'];
+    $filetmp = $_FILES['ambassador']['tmp_name'];
+    $file_ext = strtolower(end(explode('.', $_FILES['ambassador']['name'])));
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    if (empty($name))
+    {
+        $error['name'] = 'Voert u alstublieft de naam van de ambassadeur in.';
+    }
+
+    if ($filename == "")
+    {
+        $error['ambassador'] = 'Selecteert u altublieft een foto van de ambassadeur.';
+    }
+
+    if ($filesize == 0)
+    {
+        $error['sizes'] = 'De afbeeldingen mogen niet groter dan 2MB zijn.';
+    }
+
+    if (in_array($file_ext, $extensions) === false)
+    {
+        $error['extension'] = 'Alleen JPEG, JPG en PNG afbeeldingen zijn toegestaan.';
+    }
+
+    if (empty($description))
+    {
+        $error['description'] = 'Voert u alstublieft een beschrijving van de ambassedeur in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'name')
+            {
+                $nameErr = $value;
+            }
+            elseif ($key == 'ambassador')
+            {
+                $ambassadorErr = $value;
+            }
+            elseif ($key == 'sizes')
+            {
+                $sizeErr = $value;
+            }
+            elseif ($key == 'extension')
+            {
+                $extErr = $value;
+            }
+            elseif ($key == 'description')
+            {
+                $descErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $ambassadorDir = '/../ambassadors/';
+
+        if (!is_dir(__DIR__ . $ambassadorDir))
+        {
+            mkdir(__DIR__ . $ambassadorDir, 0700);
+            if (!file_exists(__DIR__ . $ambassadorDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $ambassadorDir . $filename);
+                saveAmbassador($name, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+        else
+        {
+            if (!file_exists(__DIR__ . $ambassadorDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $ambassadorDir . $filename);
+                saveAmbassador($name, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+    }
+}
+
+function saveAmbassador($name, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO ambassador(userID, ambassador, image, size, extension, description, added_at) VALUES(:userID, :ambassador, :image, :size, :extension, :description, :added_at)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':ambassador' => $name,
+        ':image' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':added_at' => $now->format('Y-m-d H:i:s')
+    ));
+
+    header('Location: ambassador.php');
+}
+
+function getAmbassadors()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT ambassadorID, ambassador, added_at, updated_at FROM ambassador');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getAmbassadorById()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT ambassador, image, description FROM ambassador WHERE ambassadorID = :ambassadorID');
+    $stmt->execute(array(
+        ':ambassadorID' => $id
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updateAmbassador()
+{
+    global $nameUpdateErr, $sizeUpdateErr, $extensionUpdateErr, $descriptionUpdateErr;
+
+    $name = checkData($_POST['name']);
+    $filename = $_FILES['ambassador']['name'];
+    $filesize = $_FILES['ambassador']['size'];
+    $file_ext = strtolower(end(explode('.', $_FILES['ambassador']['name'])));
+    $file_tmp = $_FILES['ambassador']['tmp_name'];
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    $id = $_GET['id'];
+
+    if (empty($filename))
+    {
+        if (empty($name))
+        {
+            $error['name'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'name')
+                {
+                    $nameUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            saveAmbassadorWithoutImage($id, $name, $description);
+        }
+    }
+
+    if (!empty($filename))
+    {
+        if (empty($name))
+        {
+            $error['name'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if ($filesize == 0)
+        {
+            $error['size'] = 'De afbeelding mag niet groter zijn dan 2MB.';
+        }
+
+        if (in_array($file_ext, $extensions) === false)
+        {
+            $error['extension'] = 'Alleen JPEG, JPG en PNG zijn toegestaan.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'name')
+                {
+                    $nameUpdateErr = $value;
+                }
+                elseif ($key == 'size')
+                {
+                    $sizeUpdateErr = $value;
+                }
+                elseif ($key == 'extension')
+                {
+                    $extensionUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            $ambassadorDir = '/../ambassadors/';
+
+            if (!is_dir(__DIR__ . $ambassadorDir))
+            {
+                mkdir(__DIR__ . $ambassadorDir, 0700);
+                if (!file_exists(__DIR__ . $ambassadorDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $ambassadorDir . $filename);
+                    saveAmbassadorWithImage($id, $name, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+            else
+            {
+                if (!file_exists(__DIR__ . $ambassadorDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $ambassadorDir . $filename);
+                    saveAmbassadorWithImage($id, $name, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+        }
+    }
+}
+
+function saveAmbassadorWithoutImage($id, $name, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE ambassador SET ambassador = :ambassador, description = :description, updated_at = :updated_at WHERE ambassadorID = :ambassadorID');
+    $stmt->execute(array(
+        ':ambassador' => $name,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':ambassadorID' => $id
+    ));
+
+    header('Location: ambassador.php');
+}
+
+function saveAmbassadorWithImage($id, $name, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE ambassador SET ambassador = :ambassador, image = :image, size = :size, extension = :extension, description = :description, updated_at = :updated_at WHERE ambassadorID = :ambassadorID');
+    $stmt->execute(array(
+        ':ambassador' => $name,
+        ':image' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':ambassadorID' => $id
+    ));
+
+    header('Location: ambassador.php');
+}
+
+function deleteAmbassador()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $result = getAmbassadorById();
+
+    $ambassadorDir = '/../ambassadors/';
+
+    if (file_exists(__DIR__ . $ambassadorDir . $result['image']))
+    {
+        unlink(__DIR__ . $ambassadorDir . $result['image']);
+    }
+
+    $stmt = $db->prepare('DELETE FROM ambassador WHERE ambassadorID = :ambassadorID');
+    $stmt->execute(array(
+        ':ambassadorID' => $id
+    ));
+
+    header('Location: ambassador.php');
+}
+
+function checkCharity()
+{
+    global $titleErr, $charityErr, $sizeErr, $extErr, $descErr;
+
+    $title = checkData($_POST['title']);
+    $filename = $_FILES['charity']['name'];
+    $filesize = $_FILES['charity']['size'];
+    $filetmp = $_FILES['charity']['tmp_name'];
+    $file_ext = strtolower(end(explode('.', $_FILES['charity']['name'])));
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    if (empty($title))
+    {
+        $error['title'] = 'Voert u alstublieft de naam van het goede doel in.';
+    }
+
+    if ($filename == "")
+    {
+        $error['charity'] = 'Selecteert u altublieft een logo van het goede doel.';
+    }
+
+    if ($filesize == 0)
+    {
+        $error['sizes'] = 'De afbeeldingen mogen niet groter dan 2MB zijn.';
+    }
+
+    if (in_array($file_ext, $extensions) === false)
+    {
+        $error['extension'] = 'Alleen JPEG, JPG en PNG afbeeldingen zijn toegestaan.';
+    }
+
+    if (empty($description))
+    {
+        $error['description'] = 'Voert u alstublieft een beschrijving van het goede doel in.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'title')
+            {
+                $titleErr = $value;
+            }
+            elseif ($key == 'charity')
+            {
+                $charityErr = $value;
+            }
+            elseif ($key == 'sizes')
+            {
+                $sizeErr = $value;
+            }
+            elseif ($key == 'extension')
+            {
+                $extErr = $value;
+            }
+            elseif ($key == 'description')
+            {
+                $descErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $charityDir = '/../charities/';
+
+        if (!is_dir(__DIR__ . $charityDir))
+        {
+            mkdir(__DIR__ . $charityDir, 0700);
+            if (!file_exists(__DIR__ . $charityDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $charityDir . $filename);
+                saveCharity($title, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+        else
+        {
+            if (!file_exists(__DIR__ . $charityDir . $filename))
+            {
+                move_uploaded_file($filetmp, __DIR__ . $charityDir . $filename);
+                saveCharity($title, $filename, $filesize, $file_ext, $description);
+            }
+            else
+            {
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+            }
+        }
+    }
+}
+
+function saveCharity($title, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('INSERT INTO charity(userID, title, image, size, extension, description, added_at) VALUES(:userID, :title, :image, :size, :extension, :description, :added_at)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':title' => $title,
+        ':image' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':added_at' => $now->format('Y-m-d H:i:s')
+    ));
+
+    header('Location: charity.php');
+}
+
+function getCharities()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT charityID, title, added_at, updated_at FROM charity');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
+function getCharityById()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('SELECT title, image, description FROM charity WHERE charityID = :charityID');
+    $stmt->execute(array(
+        ':charityID' => $id
+    ));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+function updateCharity()
+{
+    global $titleUpdateErr, $sizeUpdateErr, $extensionUpdateErr, $descriptionUpdateErr;
+
+    $title = checkData($_POST['title']);
+    $filename = $_FILES['charity']['name'];
+    $filesize = $_FILES['charity']['size'];
+    $file_ext = strtolower(end(explode('.', $_FILES['charity']['name'])));
+    $file_tmp = $_FILES['charity']['tmp_name'];
+    $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
+
+    $id = $_GET['id'];
+
+    if (empty($filename))
+    {
+        if (empty($title))
+        {
+            $error['title'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'title')
+                {
+                    $titleUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            saveCharityWithoutImage($id, $title, $description);
+        }
+    }
+
+    if (!empty($filename))
+    {
+        if (empty($title))
+        {
+            $error['title'] = 'Voert u alstublieft een titel voor de route in.';
+        }
+
+        if ($filesize == 0)
+        {
+            $error['size'] = 'De afbeelding mag niet groter zijn dan 2MB.';
+        }
+
+        if (in_array($file_ext, $extensions) === false)
+        {
+            $error['extension'] = 'Alleen JPEG, JPG en PNG zijn toegestaan.';
+        }
+
+        if (empty($description))
+        {
+            $error['description'] = 'Voert u alstublieft een omschrijving van de route in.';
+        }
+
+        if (isset($error))
+        {
+            foreach ($error as $key => $value)
+            {
+                if ($key == 'title')
+                {
+                    $titleUpdateErr = $value;
+                }
+                elseif ($key == 'size')
+                {
+                    $sizeUpdateErr = $value;
+                }
+                elseif ($key == 'extension')
+                {
+                    $extensionUpdateErr = $value;
+                }
+                elseif ($key == 'description')
+                {
+                    $descriptionUpdateErr = $value;
+                }
+            }
+        }
+
+        if (!isset($error))
+        {
+            $charityDir = '/../charities/';
+
+
+
+            if (!is_dir(__DIR__ . $charityDir))
+            {
+                mkdir(__DIR__ . $charityDir, 0700);
+                if (!file_exists(__DIR__ . $charityDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $charityDir . $filename);
+                    saveCharityWithImage($id, $title, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+            else
+            {
+                if (!file_exists(__DIR__ . $charityDir . $filename))
+                {
+
+                    move_uploaded_file($file_tmp, __DIR__ . $charityDir . $filename);
+                    saveCharityWithImage($id, $title, $filename, $filesize, $file_ext, $description);
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+        }
+    }
+}
+
+function saveCharityWithoutImage($id, $title, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE charity SET title = :title, description = :description, updated_at = :updated_at WHERE charityID = :charityID');
+    $stmt->execute(array(
+        ':title' => $title,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':charityID' => $id
+    ));
+
+    header('Location: charity.php');
+}
+
+function saveCharityWithImage($id, $title, $filename, $filesize, $file_ext, $description)
+{
+    global $db;
+
+    $now = new DateTime();
+
+    $stmt = $db->prepare('UPDATE charity SET title = :title, image = :image, size = :size, extension = :extension, description = :description, updated_at = :updated_at WHERE charityID = :charityID');
+    $stmt->execute(array(
+        ':title' => $title,
+        ':image' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
+        ':description' => $description,
+        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':charityID' => $id
+    ));
+
+    header('Location: charity.php');
+}
+
+function deleteCharity()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $result = getCharityById();
+
+    $charityDir = '/../charities/';
+
+    if (file_exists(__DIR__ . $charityDir . $result['image']))
+    {
+        unlink(__DIR__ . $charityDir . $result['image']);
+    }
+
+    $stmt = $db->prepare('DELETE FROM charity WHERE charityID = :charityID');
+    $stmt->execute(array(
+        ':charityID' => $id
+    ));
+
+    header('Location: charity.php');
 }

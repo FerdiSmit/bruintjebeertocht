@@ -25,6 +25,9 @@ if (!$user->is_logged_in())
                 <ul class="list-group">
                     <li class="list-group-item"><a href="news.php">Nieuwsberichten</a></li>
                     <li class="list-group-item"><a href="aboutOverview.php">Over BBT</a></li>
+                    <li class="list-group-item"><a href="route.php">Routes</a></li>
+                    <li class="list-group-item"><a href="ambassador.php">Ambassadeurs</a></li>
+                    <li class="list-group-item"><a href="charity.php">Goede Doelen</a></li>
                     <li class="list-group-item"><a href="poll.php">Poll</a></li>
                     <li class="list-group-item"><a href="albumOverview.php">Fotoalbum</a></li>
                 </ul>
