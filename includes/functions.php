@@ -1,6 +1,7 @@
 <?php
 
 require('config.php');
+require('classes/loginattempt.php');
 
 /**
  * Valideert de ingevoerde gegevens in het formulier.
@@ -169,7 +170,7 @@ function saveRegistration($username, $email, $password)
 
 function checkLogin()
 {
-    global $usernameErr, $passwordErr;
+    global $db, $usernameErr, $passwordErr;
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -182,6 +183,26 @@ function checkLogin()
     if (empty($password))
     {
         $error['password'] = 'Voert u alstublieft uw wachtwoord in.';
+    }
+
+    try {
+        $attempt = new LoginAttempt($_POST['username'], $_POST['password'], $db);
+        $attempt->whenReady(function($success) {
+            echo $success ? "Valid" : "Invalid";
+        });
+    }
+    catch (Exception $e)
+    {
+        if ($e->getCode() == 503) {
+            header('HTTP/1.1 503 Service Unavailable');
+            exit;
+        }
+        elseif ($e->getCode() == 403) {
+            header('HTTP/1.1 403 Forbidden');
+        }
+        else {
+            echo 'Error: ' . $e->getMessage();
+        }
     }
 
     if (isset($error))
@@ -227,7 +248,7 @@ function login($username, $password)
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
 
-        header('Location: dashboard/dashboard.php');
+        //header('Location: dashboard/dashboard.php');
     }
     else
     {
