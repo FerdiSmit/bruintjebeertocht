@@ -163,7 +163,7 @@ function saveRegistration($username, $email, $password)
             ':username' => $username,
             ':email' => $email,
             ':password' => $password_hash,
-            ':created_at' => $now->format('Y-m-d H:i:s')
+            ':created_at' => $now->format('d-m-Y H:i:s')
         ));
     }
 }
@@ -251,7 +251,7 @@ function login($email, $password)
     {
         $stmt = $db->prepare('UPDATE users SET last_login = :last_login WHERE email = :email');
         $stmt->execute(array(
-            ':last_login' => $now->format('Y-m-d H:i:s'),
+            ':last_login' => $now->format('d-m-Y H:i:s'),
             ':email' => $email
         ));
         $_SESSION['loggedin'] = true;
@@ -293,11 +293,25 @@ function getUsers()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT username, email, last_login FROM users');
+    $stmt = $db->prepare('SELECT userID, username, email, last_login FROM users');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function deleteUsers()
+{
+    global $db;
+
+    $id = $_GET['id'];
+
+    $stmt = $db->prepare('DELETE FROM users WHERE userID = :userID');
+    $stmt->execute(array(
+        ':userID' => $id
+    ));
+
+    header('Location: users.php');
 }
 
 function checkCreateNews()
@@ -458,12 +472,12 @@ function updateNews()
         $stmt->execute(array(
             ':title' => $title,
             ':shortDesc' => $shortDesc,
-            ':last_updated' => $now->format('Y-m-d H:i:s'),
+            ':last_updated' => $now->format('d-m-Y H:i:s'),
             ':longDesc' => $longDesc,
             ':newsID' => $id
         ));
 
-        header('Location: http://localhost/bruintjebeertocht/dashboard.php?n=news.php');
+        header('Location: news.php');
     }
 }
 
@@ -570,7 +584,7 @@ function savePoll($question, $answer1, $answer2, $answer3)
         ':answer1' => $answer1,
         ':answer2' => $answer2,
         ':answer3' => $answer3,
-        ':created_at' => $now->format('Y-m-d H:i:s')
+        ':created_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: poll.php');
@@ -677,7 +691,7 @@ function updatePoll()
             ':answer1' => $answer1,
             ':answer2' => $answer2,
             ':answer3' => $answer3,
-            ':updated_at' => $now->format('Y-m-d H:i:s'),
+            ':updated_at' => $now->format('d-m-Y H:i:s'),
             ':pollID' => $id
         ));
 
@@ -763,7 +777,7 @@ function saveAbout($title, $about)
         ':userID' => getUserId(),
         ':title' => $title,
         ':about' => $about,
-        ':created_at' => $now->format('Y-m-d H:i:s')
+        ':created_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: aboutOverview.php');
@@ -841,7 +855,7 @@ function updateAbout()
         $stmt->execute(array(
             ':title' => $title,
             ':about' => $about,
-            ':last_updated' => $now->format('Y-m-d H:i:s'),
+            ':last_updated' => $now->format('d-m-Y H:i:s'),
             ':aboutID' => $id
         ));
 
@@ -922,7 +936,7 @@ function saveAlbum($title, $description)
         ':userID' => getUserId(),
         ':title' => $title,
         ':description' => $description,
-        ':created_at' => $now->format('Y-m-d H:i:s')
+        ':created_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: albumOverview.php');
@@ -995,11 +1009,11 @@ function updateAlbum()
         $stmt->execute(array(
             ':title' => $title,
             ':description' => $description,
-            ':updated_at' => $now->format('Y-m-d H:i:s'),
+            ':updated_at' => $now->format('d-m-Y H:i:s'),
             ':albumID' => $id
         ));
 
-        header('Location: dashboard.php?alo=albumOverview.php');
+        header('Location: albumOverview.php');
     }
 }
 
@@ -1172,7 +1186,7 @@ function savePictures($file_name, $file_ext, $file_size)
         ':picture' => $file_name,
         ':size' => $file_size,
         ':extension' => $file_ext,
-        ':added_at' => $now->format('Y-m-d H:i:s')
+        ':added_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: dashboard.php?alo=albumOverview.php');
@@ -1313,7 +1327,7 @@ function saveRoute($title, $filename, $filesize, $file_ext, $description)
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':added_at' => $now->format('Y-m-d H:i:s')
+        ':added_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: route.php');
@@ -1481,7 +1495,7 @@ function saveRouteWithoutImage($id, $title, $description)
     $stmt->execute(array(
         ':title' => $title,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':routeID' => $id
     ));
 
@@ -1501,7 +1515,7 @@ function saveRouteWithImage($id, $title, $filename, $filesize, $file_ext, $descr
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':routeID' => $id
     ));
 
@@ -1642,7 +1656,7 @@ function saveAmbassador($name, $filename, $filesize, $file_ext, $description)
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':added_at' => $now->format('Y-m-d H:i:s')
+        ':added_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: ambassador.php');
@@ -1810,7 +1824,7 @@ function saveAmbassadorWithoutImage($id, $name, $description)
     $stmt->execute(array(
         ':ambassador' => $name,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':ambassadorID' => $id
     ));
 
@@ -1830,7 +1844,7 @@ function saveAmbassadorWithImage($id, $name, $filename, $filesize, $file_ext, $d
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':ambassadorID' => $id
     ));
 
@@ -1971,7 +1985,7 @@ function saveCharity($title, $filename, $filesize, $file_ext, $description)
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':added_at' => $now->format('Y-m-d H:i:s')
+        ':added_at' => $now->format('d-m-Y H:i:s')
     ));
 
     header('Location: charity.php');
@@ -2142,7 +2156,7 @@ function saveCharityWithoutImage($id, $title, $description)
     $stmt->execute(array(
         ':title' => $title,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':charityID' => $id
     ));
 
@@ -2162,7 +2176,7 @@ function saveCharityWithImage($id, $title, $filename, $filesize, $file_ext, $des
         ':size' => $filesize,
         ':extension' => $file_ext,
         ':description' => $description,
-        ':updated_at' => $now->format('Y-m-d H:i:s'),
+        ':updated_at' => $now->format('d-m-Y H:i:s'),
         ':charityID' => $id
     ));
 

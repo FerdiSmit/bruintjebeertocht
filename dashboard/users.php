@@ -13,6 +13,7 @@ include('dashboard.php');
                     <th>Naam</th>
                     <th>Email</th>
                     <th>Laatst ingelogd</th>
+                    <th>Verwijderen</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,7 @@ include('dashboard.php');
                 echo '<td>' . $user['username'] . '</td>';
                 echo '<td>' . $user['email'] . '</td>';
                 echo '<td>' . $user['last_login'] . '</td>';
+                echo '<td><a href="deleteUser.php?id=' . $user['userID'] . '">Verwijderen</a></td>';
                 echo '<tr/>';
             }
             ?>
