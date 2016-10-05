@@ -18,7 +18,7 @@ function validateRegistration()
     $email = checkData($_POST['email']);
     $password = checkData($_POST['password']);
     $confirmPassword = checkData($_POST['confirmPassword']);
-    
+
     if (empty($username))
     {
         $error['username'] = 'Vul alstublieft een gebruikersnaam in';
@@ -27,6 +27,10 @@ function validateRegistration()
     if (empty($email))
     {
         $error['email'] = 'Vul alstublieft een emailadres in';
+    }
+    else if (strpos($email, '@bruintjebeertocht.nl') === false)
+    {
+        $error['email'] = 'Het ingevulde emailadres is niet geldig!';
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
@@ -45,7 +49,7 @@ function validateRegistration()
     {
         $error['password'] = 'Het wachtwoord moet over minstens over 1 kleine letter, 1 hoofdletter en 1 nummer beschikken.';
     }
-    
+
     if (empty($confirmPassword))
     {
         $error['confPass'] = 'Bevestig alstublieft uw wachtwoord';
@@ -54,7 +58,7 @@ function validateRegistration()
     {
         $error['confPass'] = 'De wachtwoorden komen niet met elkaar overeen.';
     }
-    
+
     if (isset($error))
     {
         foreach ($error as $key => $value)
@@ -255,6 +259,17 @@ function getUserByName($username)
     return $result;
 }
 
+function getUsers()
+{
+    global $db;
+
+    $stmt = $db->prepare('SELECT username, email FROM users');
+    $stmt->execute();
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $results;
+}
+
 function checkCreateNews()
 {
     global $titleErr, $summaryErr, $startDateErr, $endDateErr, $descErr;
@@ -445,6 +460,13 @@ function getNews()
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function getNewsForPagination()
+{
+    $query = 'SELECT newsID, title, shortDesc, last_updated, longDesc FROM news ORDER BY created_date DESC';
+
+    return $query;
 }
 
 function checkPoll()
@@ -1139,6 +1161,15 @@ function getPictures()
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $results;
+}
+
+function getPicturesForPagination()
+{
+    $id = $_GET['id'];
+
+    $query = "SELECT pictureID, picture FROM picture WHERE albumID = $id";
+
+    return $query;
 }
 
 function checkRoute()
@@ -2131,7 +2162,111 @@ function deleteCharity()
     header('Location: charity.php');
 }
 
-function checkMagazine()
+function checkContactForm()
 {
-    var_dump($_FILES['magazine']);
+    global $nameErr, $emailErr, $subjectErr, $messageErr, $humanErr, $result;
+
+    $name = checkData($_POST['name']);
+    $email = checkData($_POST['email']);
+    $subject = checkData($_POST['subject']);
+    $message = checkData($_POST['message']);
+    $human = checkData($_POST['human']);
+
+    if (empty($name))
+    {
+        $error['name'] = 'Vult u alstublieft uw naam in.';
+    }
+
+    if (empty($email))
+    {
+        $error['email'] = 'Vult u alstublieft uw emailadres in.';
+    }
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
+    {
+        $error['email'] = 'Het ingevulde emailadres is niet geldig.';
+    }
+
+    if (empty($subject))
+    {
+        $error['subject'] = 'Voert u alstublieft een onderwerp in.';
+    }
+
+    if (empty($message))
+    {
+        $error['message'] = 'Voert u alstublieft een bericht in.';
+    }
+
+    if ($_SESSION['answer'] != $human)
+    {
+        $error['human'] = 'Uw antwoordt is niet correct.';
+    }
+
+    if (isset($error))
+    {
+        foreach ($error as $key => $value)
+        {
+            if ($key == 'name')
+            {
+                $nameErr = $value;
+            }
+            elseif ($key == 'email')
+            {
+                $emailErr = $value;
+            }
+            elseif ($key == 'subject')
+            {
+                $subjectErr = $value;
+            }
+            elseif ($key == 'message')
+            {
+                $messageErr = $value;
+            }
+            elseif ($key == 'human')
+            {
+                $humanErr = $value;
+            }
+        }
+    }
+
+    if (!isset($error))
+    {
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'From:' . $name . " <" . $email . ">\r\n";
+        $headers .= 'Reply-To: ' . $email . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $to = 'info@bruintjebeertocht.nl';
+        $subject = 'Bericht - Contactformulier Bruintje Beer Tocht';
+        $body =
+            "<table>" .
+            "<tr><td>Naam</td><td>" . $name . "</td></tr>" .
+            "<tr><td>Email</td><td>" . $email . "</td></tr>" .
+            "<tr><td>Onderwerp</td><td>" . $subject . "</td></tr>" .
+            "<tr><td>Bericht</td><td>" . $message . "</td></tr>";
+
+        if (mail($to, $subject, $body, $headers))
+        {
+            $result = 'Bedankt voor uw bericht! U hoort spoedig van ons!';
+        }
+        else
+        {
+            $result = 'Er is een fout opgetreden tijdens het verzenden. Probeert u het later nog eens.';
+        }
+    }
+}
+
+function captcha()
+{
+    //$math = 0;
+
+    $digit1 = mt_rand(1,20);
+    $digit2 = mt_rand(1,20);
+    if( mt_rand(0,1) === 1 ) {
+        $math = "$digit1 + $digit2";
+        $_SESSION['answer'] = $digit1 + $digit2;
+    } else {
+        $math = "$digit1 - $digit2";
+        $_SESSION['answer'] = $digit1 - $digit2;
+    }
+
+    return $math;
 }

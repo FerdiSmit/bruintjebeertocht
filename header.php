@@ -1,6 +1,5 @@
 <?php
 require('includes/functions.php');
-require('includes/classes/paginate.php');
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +97,7 @@ require('includes/classes/paginate.php');
                 <div class="row">
                     <div class="ambassadors">
                         <hr/>
-                        <h5 class="leftside-header">Ambassadeurs:</h5>
+                        <h4 class="leftside-header">Ambassadeurs:</h4>
                         <hr />
                         <div class="leftside-image">
                             <img src="images/kjeld-nuis.jpg" alt="Kjeld Nuis" class="img-responsive img-circle">
@@ -109,12 +108,28 @@ require('includes/classes/paginate.php');
                 <div class="row">
                     <div class="partners">
                         <hr/>
-                        <h5 class="leftside-header">Partners:</h5>
+                        <h4 class="leftside-header">Partners:</h4>
                         <hr/>
                         <div class="leftside-image">
+                            <a href="http://www.altaflex.nl" target="_blank">
+                                <img src="images/logo_altaflex.jpg" alt="Altaflex" class="img-responsive img-rounded">
+                                <p class="leftside-name">Altaflex</p>
+                            </a>
+                            <a href="http://www.ftcmusselkanaal.nl" target="_blank">
+                                <img src="images/logo_ftc_musselkanaal.jpg" alt="FTC Musselkanaal" class="img-responsive img-rounded">
+                                <p class="leftside-name">FTC Musselkanaal</p>
+                            </a>
+                            <a href="http://www.firma58.nl" target="_blank">
+                                <img src="images/logo_firma58.jpg" alt="Firma 58" class="img-responsive img-rounded">
+                                <p class="leftside-name">Firma 58</p>
+                            </a>
                             <a href="http://www.grinta.be" target="_blank">
                                 <img src="images/grinta.jpg" alt="Grinta" class="img-responsive img-rounded">
                                 <p class="leftside-name">Grinta</p>
+                            </a>
+                            <a href="http://www.cyclelive.be" target="_blank">
+                                <img src="images/logo_cyclelive.jpg" alt="Cyclelive" class="img-responsive img-rounded">
+                                <p class="leftside-name">Cyclelive</p>
                             </a>
                         </div>
                     </div>

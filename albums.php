@@ -1,9 +1,7 @@
 <?php
 include('header.php');
 
-global $db;
-
-$paginate = new Paginate($db);
+global $paginate;
 ?>
         <div id="middle" class="col-xs-8">
             <div id="blueimp-gallery-dialog" data-show="blind" data-hide="blind">
@@ -21,7 +19,12 @@ $paginate = new Paginate($db);
                     <?php
                     $id = $_GET['id'];
                     $album = getAlbumByNameAndId($id);
-                    $pictures = getPictures();
+
+                    $rows = getPicturesForPagination();
+                    $record_per_page = 30;
+                    $query = $paginate->paging($rows, $record_per_page);
+                    $pictures = $paginate->dataView($query);
+
                     $counter = 1;
                     $albumDir = 'albums/' . $album['title'] .'/';
                     ?>
@@ -39,6 +42,9 @@ $paginate = new Paginate($db);
                     }
                     ?>
                     </table>
+                    <ul class="pagination">
+                        <?php $paginate->pagingLink(getPicturesForPagination(), $record_per_page); ?>
+                    </ul>
                 </div>
             </div>
         </div>

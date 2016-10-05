@@ -30,6 +30,7 @@ if (!$user->is_logged_in())
                     <li class="list-group-item"><a href="charity.php">Goede Doelen</a></li>
                     <li class="list-group-item"><a href="poll.php">Poll</a></li>
                     <li class="list-group-item"><a href="albumOverview.php">Fotoalbum</a></li>
+                    <li class="list-group-item"><a href="users.php">Gebruikers</a></li>
                 </ul>
             </div>
         </div>

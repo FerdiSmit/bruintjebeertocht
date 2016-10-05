@@ -65,26 +65,65 @@ class Paginate
 
                     if ($current_page != 1)
                     {
-                        $previous = $current_page - 1;
-                        echo "<li><a href='" . $self . "?page_no=" . $previous . "'>Previous</a></li>";
+                        if (isset($_GET['id']))
+                        {
+                            $id = $_GET['id'];
+
+                            $previous = $current_page - 1;
+                            echo "<li><a href='" . $self . "?id=" . $id . "&page_no=" . $previous . "'>Vorige</a></li>";
+                        }
+                        else
+                        {
+                            $previous = $current_page - 1;
+                            echo "<li><a href='" . $self . "?page_no=" . $previous . "'>Vorige</a></li>";
+                        }
+
                     }
 
                     for ($i = 1; $i <= $total_no_of_pages; $i++)
                     {
                         if ($i == $current_page)
                         {
-                            echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
+                            if (isset($_GET['id']))
+                            {
+                                $id = $_GET['id'];
+
+                                echo "<li><a href='" . $self . "?id=" . $id . "&page_no=" . $i . "'>$i</a></li>";
+                            }
+                            else
+                            {
+                                echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
+                            }
                         }
                         else
                         {
-                            echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
+                            if (isset($_GET['id']))
+                            {
+                                $id = $_GET['id'];
+
+                                echo "<li><a href='" . $self . "?id=" . $id . "&page_no=" . $i . "'>$i</a></li>";
+                            }
+                            else
+                            {
+                                echo "<li><a href='" . $self . "?page_no=" . $i . "'>" . $i . "</a></li>";
+                            }
                         }
                     }
 
                     if ($current_page != $total_no_of_pages)
                     {
                         $next = $current_page + 1;
-                        echo "<li><a href='" . $self . "?page_no=" . $next . "'>Next</a></li>";
+
+                        if (isset($_GET['id']))
+                        {
+                            $id = $_GET['id'];
+
+                            echo "<li><a href='" . $self . "?id=" . $id . "&page_no=" . $next . "'>Volgende</a></li>";
+                        }
+                        else
+                        {
+                            echo "<li><a href='" . $self . "?page_no=" . $next . "'>Volgende</a></li>";
+                        }
                     }
                     ?>
                 </td>

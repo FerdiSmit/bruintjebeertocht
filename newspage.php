@@ -1,9 +1,7 @@
 <?php
 include('header.php');
 
-global $db;
-
-$paginate = new Paginate($db);
+global $paginate;
 ?>
 <div id="middle" class="col-xs-8">
     <div class="news">
@@ -23,7 +21,11 @@ $paginate = new Paginate($db);
     }
     else
     {
-        $results = getNews();
+        $rows = getNewsForPagination();
+
+        $records_per_page = 5;
+        $query = $paginate->paging($rows, $records_per_page);
+        $results = $paginate->dataView($query);
 
         foreach ($results as $result)
         {
@@ -38,6 +40,9 @@ $paginate = new Paginate($db);
         }
     }
     ?>
+        <ul class="pagination">
+            <?php $paginate->pagingLink(getNewsForPagination(), $records_per_page); ?>
+        </ul>
     </div>
 </div>
 <?php

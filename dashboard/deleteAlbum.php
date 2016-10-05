@@ -2,6 +2,8 @@
 
 include('dashboard.php');
 
+$_SESSION['username'] = 'pipo';
+
 $results = getUserByName($_SESSION['username']);
 
 if (!$user->is_logged_in())

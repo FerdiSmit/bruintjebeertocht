@@ -124,13 +124,24 @@ body {
     margin-right: 20px;
 }
 
-#middle .sponsors {
+#middle .sponsors .hoofdsponsoren,
+#middle .sponsors .vp-sponsoren,
+#middle .sponsors .subsponsoren {
     margin-left: 20px;
     margin-right: 20px;
 }
 
-#middle .header-sponsors {
+#middle .sponsors .sponsor-headers {
+    background-color: #f0d514;
+    height: 59px;
+    margin-top: 21px;
+    margin-bottom: 20px;
+}
+
+#middle .sponsor-headers h3 {
     text-align: center;
+    padding-top: 17px;
+    font-weight: bold;
 }
 
 #middle .route-title {
@@ -238,4 +249,9 @@ body {
 
 #footer {
     background-color: #f0d514;
+}
+
+#leftside h4,
+#rightside h4 {
+    font-weight: bold;
 }
