@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc508f78-d635-45e8-ab09-7609cc37032d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/classes/loginattempt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteAbout.php" afterPath="$PROJECT_DIR$/dashboard/deleteAbout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteAlbum.php" afterPath="$PROJECT_DIR$/dashboard/deleteAlbum.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteAmbassador.php" afterPath="$PROJECT_DIR$/dashboard/deleteAmbassador.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteCharity.php" afterPath="$PROJECT_DIR$/dashboard/deleteCharity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteNews.php" afterPath="$PROJECT_DIR$/dashboard/deleteNews.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deletePoll.php" afterPath="$PROJECT_DIR$/dashboard/deletePoll.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/deleteRoute.php" afterPath="$PROJECT_DIR$/dashboard/deleteRoute.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard/users.php" afterPath="$PROJECT_DIR$/dashboard/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/classes/loginattempt.php" afterPath="$PROJECT_DIR$/includes/classes/loginattempt.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/functions.php" afterPath="$PROJECT_DIR$/includes/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
     </list>
     <ignored path="bruintjebeertocht.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,147 +41,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/content.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="256" column="1" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginattempt.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loginattempt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/classes/loginattempt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2125">
-              <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+            <state relative-caret-position="1179">
+              <caret line="213" column="45" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
               <folding>
-                <marker date="1475667709003" expanded="true" signature="2903:2969" ph="INSERT INTO login_attempt_queue... " />
-                <marker date="1475667709003" expanded="true" signature="3624:3827" ph="SELECT COUNT... " />
-                <marker date="1475667709003" expanded="true" signature="4572:4779" ph="SELECT id FR... login_attempt_queue" />
-                <marker date="1475667709003" expanded="true" signature="5145:5269" ph="UPDATE login... " />
-                <marker date="1475667709003" expanded="true" signature="5825:5910" ph="SELECT passw... users" />
-                <marker date="1475667709003" expanded="true" signature="6556:6689" ph="DELETE FROM " />
+                <marker date="1475668862126" expanded="true" signature="2891:2954" ph="INSERT INTO login_attempt_queue... " />
+                <marker date="1475668862126" expanded="true" signature="3606:3806" ph="SELECT COUNT... " />
+                <marker date="1475668862126" expanded="true" signature="4548:4752" ph="SELECT id FR... login_attempt_queue" />
+                <marker date="1475668862126" expanded="true" signature="5115:5239" ph="UPDATE login... " />
+                <marker date="1475668862126" expanded="true" signature="5795:5877" ph="SELECT passw... users" />
+                <marker date="1475668862126" expanded="true" signature="6520:6653" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="250" column="10" selection-start-line="250" selection-start-column="10" selection-end-line="250" selection-end-column="10" />
+            <state relative-caret-position="66">
+              <caret line="366" column="31" selection-start-line="366" selection-start-column="21" selection-end-line="366" selection-end-column="31" />
               <folding>
-                <marker date="1475667453739" expanded="true" signature="3349:3402" ph="SELECT usern... users" />
-                <marker date="1475667453739" expanded="true" signature="3544:3588" ph="SELECT email... users" />
-                <marker date="1475667453739" expanded="true" signature="4357:4465" ph="INSERT INTO users... " />
-                <marker date="1475667453739" expanded="true" signature="6103:6174" ph="SELECT userI... users" />
-                <marker date="1475667453739" expanded="true" signature="6391:6459" ph="UPDATE users... " />
-                <marker date="1475667453739" expanded="true" signature="7134:7160" ph="SELECT usern... users" />
-                <marker date="1475667453739" expanded="true" signature="7134:7187" ph="SELECT usern... users" />
-                <marker date="1475667453739" expanded="true" signature="7393:7426" ph="SELECT usern... users" />
-                <marker date="1475667453739" expanded="true" signature="8963:9093" ph="INSERT INTO news... " />
-                <marker date="1475667453739" expanded="true" signature="9405:9463" ph="SELECT newsI... news" />
-                <marker date="1475667453739" expanded="true" signature="9715:9795" ph="SELECT title... news" />
-                <marker date="1475667453739" expanded="true" signature="11078:11207" ph="UPDATE news " />
-                <marker date="1475667453739" expanded="true" signature="11642:11681" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="11845:11937" ph="SELECT newsI... news" />
-                <marker date="1475667453739" expanded="true" signature="11845:11945" ph="SELECT newsI... news" />
-                <marker date="1475667453739" expanded="true" signature="12094:12186" ph="SELECT newsI... news" />
-                <marker date="1475667453739" expanded="true" signature="13641:13785" ph="INSERT INTO poll... " />
-                <marker date="1475667453739" expanded="true" signature="14146:14203" ph="SELECT quest... poll" />
-                <marker date="1475667453739" expanded="true" signature="14368:14420" ph="SELECT quest... poll" />
-                <marker date="1475667453739" expanded="true" signature="14610:14693" ph="SELECT pollI... poll" />
-                <marker date="1475667453739" expanded="true" signature="16191:16336" ph="UPDATE poll " />
-                <marker date="1475667453739" expanded="true" signature="16754:16793" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="17000:17051" ph="SELECT userI... users" />
-                <marker date="1475667453739" expanded="true" signature="18017:18113" ph="INSERT INTO about... " />
-                <marker date="1475667453739" expanded="true" signature="18406:18471" ph="SELECT about... about" />
-                <marker date="1475667453739" expanded="true" signature="18721:18776" ph="SELECT title... about" />
-                <marker date="1475667453739" expanded="true" signature="19692:19794" ph="UPDATE about... " />
-                <marker date="1475667453739" expanded="true" signature="20143:20185" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="21459:21567" ph="INSERT INTO album... " />
-                <marker date="1475667453739" expanded="true" signature="21873:21942" ph="SELECT album... album" />
-                <marker date="1475667453739" expanded="true" signature="22136:22197" ph="SELECT title... album" />
-                <marker date="1475667453739" expanded="true" signature="23178:23288" ph="UPDATE album... " />
-                <marker date="1475667453739" expanded="true" signature="23652:23700" ph="SELECT title... album" />
-                <marker date="1475667453739" expanded="true" signature="24161:24203" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="24691:24735" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="24841:24883" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="28135:28256" ph="INSERT INTO picture... " />
-                <marker date="1475667453739" expanded="true" signature="28629:28692" ph="SELECT pictu... picture" />
-                <marker date="1475667453739" expanded="true" signature="28907:28962" ph="SELECT pictu... picture" />
-                <marker date="1475667453739" expanded="true" signature="31831:31982" ph="INSERT INTO route... " />
-                <marker date="1475667453739" expanded="true" signature="32372:32444" ph="SELECT route... route" />
-                <marker date="1475667453739" expanded="true" signature="32638:32704" ph="SELECT title... route" />
-                <marker date="1475667453739" expanded="true" signature="36678:36788" ph="UPDATE route... " />
-                <marker date="1475667453739" expanded="true" signature="37174:37334" ph="UPDATE route... " />
-                <marker date="1475667453739" expanded="true" signature="37934:37976" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="41054:41224" ph="INSERT INTO ambassador... " />
-                <marker date="1475667453739" expanded="true" signature="41630:41719" ph="SELECT ambas... ambassador" />
-                <marker date="1475667453739" expanded="true" signature="41918:42006" ph="SELECT ambas... ambassador" />
-                <marker date="1475667453739" expanded="true" signature="46063:46198" ph="UPDATE ambas... " />
-                <marker date="1475667453739" expanded="true" signature="46602:46791" ph="UPDATE ambas... " />
-                <marker date="1475667453739" expanded="true" signature="47441:47498" ph="DELETE FROM " />
-                <marker date="1475667453739" expanded="true" signature="50537:50694" ph="INSERT INTO charity... " />
-                <marker date="1475667453739" expanded="true" signature="51091:51169" ph="SELECT chari... charity" />
-                <marker date="1475667453739" expanded="true" signature="51365:51439" ph="SELECT title... charity" />
-                <marker date="1475667453739" expanded="true" signature="55461:55577" ph="UPDATE chari... " />
-                <marker date="1475667453739" expanded="true" signature="55969:56139" ph="UPDATE chari... " />
-                <marker date="1475667453739" expanded="true" signature="56762:56810" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="3349:3402" ph="SELECT usern... users" />
+                <marker date="1475670139443" expanded="true" signature="3544:3588" ph="SELECT email... users" />
+                <marker date="1475670139443" expanded="true" signature="4357:4465" ph="INSERT INTO users... " />
+                <marker date="1475670139443" expanded="true" signature="6359:6416" ph="SELECT userI... users" />
+                <marker date="1475670139443" expanded="true" signature="6359:6421" ph="SELECT userI... users" />
+                <marker date="1475670139443" expanded="true" signature="6632:6689" ph="UPDATE users... " />
+                <marker date="1475670139443" expanded="true" signature="6632:6694" ph="UPDATE users... " />
+                <marker date="1475670139443" expanded="true" signature="7353:7376" ph="SELECT usern... users" />
+                <marker date="1475670139443" expanded="true" signature="7353:7392" ph="SELECT usern... users" />
+                <marker date="1475670139443" expanded="true" signature="7353:7397" ph="SELECT email... users" />
+                <marker date="1475670139443" expanded="true" signature="7597:7642" ph="SELECT usern... users" />
+                <marker date="1475670139443" expanded="true" signature="9179:9309" ph="INSERT INTO news... " />
+                <marker date="1475670139443" expanded="true" signature="9621:9679" ph="SELECT newsI... news" />
+                <marker date="1475670139443" expanded="true" signature="9931:10011" ph="SELECT title... news" />
+                <marker date="1475670139443" expanded="true" signature="11294:11423" ph="UPDATE news " />
+                <marker date="1475670139443" expanded="true" signature="11858:11897" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="12061:12153" ph="SELECT newsI... news" />
+                <marker date="1475670139443" expanded="true" signature="12061:12161" ph="SELECT newsI... news" />
+                <marker date="1475670139443" expanded="true" signature="12310:12402" ph="SELECT newsI... news" />
+                <marker date="1475670139443" expanded="true" signature="13857:14001" ph="INSERT INTO poll... " />
+                <marker date="1475670139443" expanded="true" signature="14362:14419" ph="SELECT quest... poll" />
+                <marker date="1475670139443" expanded="true" signature="14584:14636" ph="SELECT quest... poll" />
+                <marker date="1475670139443" expanded="true" signature="14826:14909" ph="SELECT pollI... poll" />
+                <marker date="1475670139443" expanded="true" signature="16407:16552" ph="UPDATE poll " />
+                <marker date="1475670139443" expanded="true" signature="16970:17009" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="17210:17250" ph="SELECT userI... users" />
+                <marker date="1475670139443" expanded="true" signature="17210:17255" ph="SELECT userI... users" />
+                <marker date="1475670139443" expanded="true" signature="18215:18311" ph="INSERT INTO about... " />
+                <marker date="1475670139443" expanded="true" signature="18604:18669" ph="SELECT about... about" />
+                <marker date="1475670139443" expanded="true" signature="18919:18974" ph="SELECT title... about" />
+                <marker date="1475670139443" expanded="true" signature="19890:19992" ph="UPDATE about... " />
+                <marker date="1475670139443" expanded="true" signature="20341:20383" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="21657:21765" ph="INSERT INTO album... " />
+                <marker date="1475670139443" expanded="true" signature="22071:22140" ph="SELECT album... album" />
+                <marker date="1475670139443" expanded="true" signature="22334:22395" ph="SELECT title... album" />
+                <marker date="1475670139443" expanded="true" signature="23376:23486" ph="UPDATE album... " />
+                <marker date="1475670139443" expanded="true" signature="23850:23898" ph="SELECT title... album" />
+                <marker date="1475670139443" expanded="true" signature="24359:24401" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="24889:24933" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="25039:25081" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="28333:28454" ph="INSERT INTO picture... " />
+                <marker date="1475670139443" expanded="true" signature="28827:28890" ph="SELECT pictu... picture" />
+                <marker date="1475670139443" expanded="true" signature="29105:29160" ph="SELECT pictu... picture" />
+                <marker date="1475670139443" expanded="true" signature="32029:32180" ph="INSERT INTO route... " />
+                <marker date="1475670139443" expanded="true" signature="32570:32642" ph="SELECT route... route" />
+                <marker date="1475670139443" expanded="true" signature="32836:32902" ph="SELECT title... route" />
+                <marker date="1475670139443" expanded="true" signature="36876:36986" ph="UPDATE route... " />
+                <marker date="1475670139443" expanded="true" signature="37372:37532" ph="UPDATE route... " />
+                <marker date="1475670139443" expanded="true" signature="38132:38174" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="41252:41422" ph="INSERT INTO ambassador... " />
+                <marker date="1475670139443" expanded="true" signature="41828:41917" ph="SELECT ambas... ambassador" />
+                <marker date="1475670139443" expanded="true" signature="42116:42204" ph="SELECT ambas... ambassador" />
+                <marker date="1475670139443" expanded="true" signature="46261:46396" ph="UPDATE ambas... " />
+                <marker date="1475670139443" expanded="true" signature="46800:46989" ph="UPDATE ambas... " />
+                <marker date="1475670139443" expanded="true" signature="47639:47696" ph="DELETE FROM " />
+                <marker date="1475670139443" expanded="true" signature="50735:50892" ph="INSERT INTO charity... " />
+                <marker date="1475670139443" expanded="true" signature="51289:51367" ph="SELECT chari... charity" />
+                <marker date="1475670139443" expanded="true" signature="51563:51637" ph="SELECT title... charity" />
+                <marker date="1475670139443" expanded="true" signature="55659:55775" ph="UPDATE chari... " />
+                <marker date="1475670139443" expanded="true" signature="56167:56337" ph="UPDATE chari... " />
+                <marker date="1475670139443" expanded="true" signature="56960:57008" ph="DELETE FROM " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sponsors.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sponsors.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/addUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -181,18 +133,8 @@
       <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard/users.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="78" selection-start-line="32" selection-start-column="78" selection-end-line="32" selection-end-column="78" />
+            <state relative-caret-position="442">
+              <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -214,25 +156,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dashboard/updatePoll.php" />
-        <option value="$PROJECT_DIR$/dashboard/poll.php" />
-        <option value="$PROJECT_DIR$/dashboard/albums.php" />
         <option value="$PROJECT_DIR$/overBBT.php" />
         <option value="$PROJECT_DIR$/dashboard/header.php" />
         <option value="$PROJECT_DIR$/css/ui-darkness.css" />
         <option value="$PROJECT_DIR$/css/blueimp.css" />
         <option value="$PROJECT_DIR$/js/jquery.blueimp-gallery.min.js" />
         <option value="$PROJECT_DIR$/dashboard/route.php" />
-        <option value="$PROJECT_DIR$/dashboard/deleteRoute.php" />
         <option value="$PROJECT_DIR$/dashboard/ambassador.php" />
-        <option value="$PROJECT_DIR$/dashboard/deleteAmbassador.php" />
         <option value="$PROJECT_DIR$/dashboard/addCharity.php" />
         <option value="$PROJECT_DIR$/dashboard/addAmbassador.php" />
         <option value="$PROJECT_DIR$/dashboard/addRoute.php" />
         <option value="$PROJECT_DIR$/dashboard/updateAmbassador.php" />
         <option value="$PROJECT_DIR$/dashboard/updateCharity.php" />
         <option value="$PROJECT_DIR$/dashboard/updateRoute.php" />
-        <option value="$PROJECT_DIR$/dashboard/deleteCharity.php" />
         <option value="$PROJECT_DIR$/dashboard/charity.php" />
         <option value="$PROJECT_DIR$/dashboard/magazine.php" />
         <option value="$PROJECT_DIR$/dashboard/addMagazine.php" />
@@ -240,11 +176,9 @@
         <option value="$PROJECT_DIR$/charities.php" />
         <option value="$PROJECT_DIR$/ambassadorspage.php" />
         <option value="$PROJECT_DIR$/magazine.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/includes/captcha.php" />
         <option value="$PROJECT_DIR$/contact.php" />
-        <option value="$PROJECT_DIR$/dashboard/deleteAlbum.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/css/ArchitectsDaughter.css" />
         <option value="$PROJECT_DIR$/js/back.js" />
@@ -256,15 +190,23 @@
         <option value="$PROJECT_DIR$/includes/classes/paginate.php" />
         <option value="$PROJECT_DIR$/dashboard/register.php" />
         <option value="$PROJECT_DIR$/dashboard/addUser.php" />
-        <option value="$PROJECT_DIR$/dashboard/users.php" />
         <option value="$PROJECT_DIR$/dashboard/dashboard.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/sponsors.php" />
         <option value="$PROJECT_DIR$/css/content.css" />
         <option value="$PROJECT_DIR$/includes/classes/LoginAttempt.php" />
-        <option value="$PROJECT_DIR$/includes/functions.php" />
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/includes/classes/loginattempt.php" />
+        <option value="$PROJECT_DIR$/dashboard/users.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteNews.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteAlbum.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteAbout.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteAmbassador.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteCharity.php" />
+        <option value="$PROJECT_DIR$/dashboard/deleteRoute.php" />
+        <option value="$PROJECT_DIR$/dashboard/deletePoll.php" />
+        <option value="$PROJECT_DIR$/includes/functions.php" />
       </list>
     </option>
   </component>
@@ -396,6 +338,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bruintjebeertocht" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bruintjebeertocht" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -532,12 +488,12 @@
       <workItem from="1475062063512" duration="49307000" />
       <workItem from="1475399041462" duration="9034000" />
       <workItem from="1475575596490" duration="14730000" />
-      <workItem from="1475650533071" duration="9291000" />
+      <workItem from="1475650533071" duration="11859000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381501000" />
+    <option name="totallyTimeSpent" value="384069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1696" height="1026" extended-state="6" />
@@ -601,41 +557,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dashboard/pictureoverview.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/addAbout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/addPictures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="89" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="110" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/deletePoll.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -643,25 +564,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/deleteRoute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/ambassador.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/addAmbassador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -692,22 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/deleteAmbassador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/deleteCharity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -749,13 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="7" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/captcha.php" />
     <entry file="file://$PROJECT_DIR$/routes.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -777,13 +660,6 @@
         <state relative-caret-position="46">
           <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/deleteAlbum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -828,6 +704,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -849,6 +726,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="83" selection-start-line="27" selection-start-column="83" selection-end-line="27" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -880,14 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -948,83 +818,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/functions.php">
+    <entry file="file://$PROJECT_DIR$/dashboard/pictureoverview.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="250" column="10" selection-start-line="250" selection-start-column="10" selection-end-line="250" selection-end-column="10" />
-          <folding>
-            <marker date="1475667453739" expanded="true" signature="3349:3402" ph="SELECT usern... users" />
-            <marker date="1475667453739" expanded="true" signature="3544:3588" ph="SELECT email... users" />
-            <marker date="1475667453739" expanded="true" signature="4357:4465" ph="INSERT INTO users... " />
-            <marker date="1475667453739" expanded="true" signature="6103:6174" ph="SELECT userI... users" />
-            <marker date="1475667453739" expanded="true" signature="6391:6459" ph="UPDATE users... " />
-            <marker date="1475667453739" expanded="true" signature="7134:7160" ph="SELECT usern... users" />
-            <marker date="1475667453739" expanded="true" signature="7134:7187" ph="SELECT usern... users" />
-            <marker date="1475667453739" expanded="true" signature="7393:7426" ph="SELECT usern... users" />
-            <marker date="1475667453739" expanded="true" signature="8963:9093" ph="INSERT INTO news... " />
-            <marker date="1475667453739" expanded="true" signature="9405:9463" ph="SELECT newsI... news" />
-            <marker date="1475667453739" expanded="true" signature="9715:9795" ph="SELECT title... news" />
-            <marker date="1475667453739" expanded="true" signature="11078:11207" ph="UPDATE news " />
-            <marker date="1475667453739" expanded="true" signature="11642:11681" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="11845:11937" ph="SELECT newsI... news" />
-            <marker date="1475667453739" expanded="true" signature="11845:11945" ph="SELECT newsI... news" />
-            <marker date="1475667453739" expanded="true" signature="12094:12186" ph="SELECT newsI... news" />
-            <marker date="1475667453739" expanded="true" signature="13641:13785" ph="INSERT INTO poll... " />
-            <marker date="1475667453739" expanded="true" signature="14146:14203" ph="SELECT quest... poll" />
-            <marker date="1475667453739" expanded="true" signature="14368:14420" ph="SELECT quest... poll" />
-            <marker date="1475667453739" expanded="true" signature="14610:14693" ph="SELECT pollI... poll" />
-            <marker date="1475667453739" expanded="true" signature="16191:16336" ph="UPDATE poll " />
-            <marker date="1475667453739" expanded="true" signature="16754:16793" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="17000:17051" ph="SELECT userI... users" />
-            <marker date="1475667453739" expanded="true" signature="18017:18113" ph="INSERT INTO about... " />
-            <marker date="1475667453739" expanded="true" signature="18406:18471" ph="SELECT about... about" />
-            <marker date="1475667453739" expanded="true" signature="18721:18776" ph="SELECT title... about" />
-            <marker date="1475667453739" expanded="true" signature="19692:19794" ph="UPDATE about... " />
-            <marker date="1475667453739" expanded="true" signature="20143:20185" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="21459:21567" ph="INSERT INTO album... " />
-            <marker date="1475667453739" expanded="true" signature="21873:21942" ph="SELECT album... album" />
-            <marker date="1475667453739" expanded="true" signature="22136:22197" ph="SELECT title... album" />
-            <marker date="1475667453739" expanded="true" signature="23178:23288" ph="UPDATE album... " />
-            <marker date="1475667453739" expanded="true" signature="23652:23700" ph="SELECT title... album" />
-            <marker date="1475667453739" expanded="true" signature="24161:24203" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="24691:24735" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="24841:24883" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="28135:28256" ph="INSERT INTO picture... " />
-            <marker date="1475667453739" expanded="true" signature="28629:28692" ph="SELECT pictu... picture" />
-            <marker date="1475667453739" expanded="true" signature="28907:28962" ph="SELECT pictu... picture" />
-            <marker date="1475667453739" expanded="true" signature="31831:31982" ph="INSERT INTO route... " />
-            <marker date="1475667453739" expanded="true" signature="32372:32444" ph="SELECT route... route" />
-            <marker date="1475667453739" expanded="true" signature="32638:32704" ph="SELECT title... route" />
-            <marker date="1475667453739" expanded="true" signature="36678:36788" ph="UPDATE route... " />
-            <marker date="1475667453739" expanded="true" signature="37174:37334" ph="UPDATE route... " />
-            <marker date="1475667453739" expanded="true" signature="37934:37976" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="41054:41224" ph="INSERT INTO ambassador... " />
-            <marker date="1475667453739" expanded="true" signature="41630:41719" ph="SELECT ambas... ambassador" />
-            <marker date="1475667453739" expanded="true" signature="41918:42006" ph="SELECT ambas... ambassador" />
-            <marker date="1475667453739" expanded="true" signature="46063:46198" ph="UPDATE ambas... " />
-            <marker date="1475667453739" expanded="true" signature="46602:46791" ph="UPDATE ambas... " />
-            <marker date="1475667453739" expanded="true" signature="47441:47498" ph="DELETE FROM " />
-            <marker date="1475667453739" expanded="true" signature="50537:50694" ph="INSERT INTO charity... " />
-            <marker date="1475667453739" expanded="true" signature="51091:51169" ph="SELECT chari... charity" />
-            <marker date="1475667453739" expanded="true" signature="51365:51439" ph="SELECT title... charity" />
-            <marker date="1475667453739" expanded="true" signature="55461:55577" ph="UPDATE chari... " />
-            <marker date="1475667453739" expanded="true" signature="55969:56139" ph="UPDATE chari... " />
-            <marker date="1475667453739" expanded="true" signature="56762:56810" ph="DELETE FROM " />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/addAbout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/addAmbassador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="53" column="89" selection-start-line="53" selection-start-column="89" selection-end-line="53" selection-end-column="89" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/classes/loginattempt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2125">
-          <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+        <state relative-caret-position="1179">
+          <caret line="213" column="45" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
           <folding>
-            <marker date="1475667709003" expanded="true" signature="2903:2969" ph="INSERT INTO login_attempt_queue... " />
-            <marker date="1475667709003" expanded="true" signature="3624:3827" ph="SELECT COUNT... " />
-            <marker date="1475667709003" expanded="true" signature="4572:4779" ph="SELECT id FR... login_attempt_queue" />
-            <marker date="1475667709003" expanded="true" signature="5145:5269" ph="UPDATE login... " />
-            <marker date="1475667709003" expanded="true" signature="5825:5910" ph="SELECT passw... users" />
-            <marker date="1475667709003" expanded="true" signature="6556:6689" ph="DELETE FROM " />
+            <marker date="1475668862126" expanded="true" signature="2891:2954" ph="INSERT INTO login_attempt_queue... " />
+            <marker date="1475668862126" expanded="true" signature="3606:3806" ph="SELECT COUNT... " />
+            <marker date="1475668862126" expanded="true" signature="4548:4752" ph="SELECT id FR... login_attempt_queue" />
+            <marker date="1475668862126" expanded="true" signature="5115:5239" ph="UPDATE login... " />
+            <marker date="1475668862126" expanded="true" signature="5795:5877" ph="SELECT passw... users" />
+            <marker date="1475668862126" expanded="true" signature="6520:6653" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteNews.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteAlbum.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteAbout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteAmbassador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteCharity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deleteRoute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/deletePoll.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="366" column="31" selection-start-line="366" selection-start-column="21" selection-end-line="366" selection-end-column="31" />
+          <folding>
+            <marker date="1475670139443" expanded="true" signature="3349:3402" ph="SELECT usern... users" />
+            <marker date="1475670139443" expanded="true" signature="3544:3588" ph="SELECT email... users" />
+            <marker date="1475670139443" expanded="true" signature="4357:4465" ph="INSERT INTO users... " />
+            <marker date="1475670139443" expanded="true" signature="6359:6416" ph="SELECT userI... users" />
+            <marker date="1475670139443" expanded="true" signature="6359:6421" ph="SELECT userI... users" />
+            <marker date="1475670139443" expanded="true" signature="6632:6689" ph="UPDATE users... " />
+            <marker date="1475670139443" expanded="true" signature="6632:6694" ph="UPDATE users... " />
+            <marker date="1475670139443" expanded="true" signature="7353:7376" ph="SELECT usern... users" />
+            <marker date="1475670139443" expanded="true" signature="7353:7392" ph="SELECT usern... users" />
+            <marker date="1475670139443" expanded="true" signature="7353:7397" ph="SELECT email... users" />
+            <marker date="1475670139443" expanded="true" signature="7597:7642" ph="SELECT usern... users" />
+            <marker date="1475670139443" expanded="true" signature="9179:9309" ph="INSERT INTO news... " />
+            <marker date="1475670139443" expanded="true" signature="9621:9679" ph="SELECT newsI... news" />
+            <marker date="1475670139443" expanded="true" signature="9931:10011" ph="SELECT title... news" />
+            <marker date="1475670139443" expanded="true" signature="11294:11423" ph="UPDATE news " />
+            <marker date="1475670139443" expanded="true" signature="11858:11897" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="12061:12153" ph="SELECT newsI... news" />
+            <marker date="1475670139443" expanded="true" signature="12061:12161" ph="SELECT newsI... news" />
+            <marker date="1475670139443" expanded="true" signature="12310:12402" ph="SELECT newsI... news" />
+            <marker date="1475670139443" expanded="true" signature="13857:14001" ph="INSERT INTO poll... " />
+            <marker date="1475670139443" expanded="true" signature="14362:14419" ph="SELECT quest... poll" />
+            <marker date="1475670139443" expanded="true" signature="14584:14636" ph="SELECT quest... poll" />
+            <marker date="1475670139443" expanded="true" signature="14826:14909" ph="SELECT pollI... poll" />
+            <marker date="1475670139443" expanded="true" signature="16407:16552" ph="UPDATE poll " />
+            <marker date="1475670139443" expanded="true" signature="16970:17009" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="17210:17250" ph="SELECT userI... users" />
+            <marker date="1475670139443" expanded="true" signature="17210:17255" ph="SELECT userI... users" />
+            <marker date="1475670139443" expanded="true" signature="18215:18311" ph="INSERT INTO about... " />
+            <marker date="1475670139443" expanded="true" signature="18604:18669" ph="SELECT about... about" />
+            <marker date="1475670139443" expanded="true" signature="18919:18974" ph="SELECT title... about" />
+            <marker date="1475670139443" expanded="true" signature="19890:19992" ph="UPDATE about... " />
+            <marker date="1475670139443" expanded="true" signature="20341:20383" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="21657:21765" ph="INSERT INTO album... " />
+            <marker date="1475670139443" expanded="true" signature="22071:22140" ph="SELECT album... album" />
+            <marker date="1475670139443" expanded="true" signature="22334:22395" ph="SELECT title... album" />
+            <marker date="1475670139443" expanded="true" signature="23376:23486" ph="UPDATE album... " />
+            <marker date="1475670139443" expanded="true" signature="23850:23898" ph="SELECT title... album" />
+            <marker date="1475670139443" expanded="true" signature="24359:24401" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="24889:24933" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="25039:25081" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="28333:28454" ph="INSERT INTO picture... " />
+            <marker date="1475670139443" expanded="true" signature="28827:28890" ph="SELECT pictu... picture" />
+            <marker date="1475670139443" expanded="true" signature="29105:29160" ph="SELECT pictu... picture" />
+            <marker date="1475670139443" expanded="true" signature="32029:32180" ph="INSERT INTO route... " />
+            <marker date="1475670139443" expanded="true" signature="32570:32642" ph="SELECT route... route" />
+            <marker date="1475670139443" expanded="true" signature="32836:32902" ph="SELECT title... route" />
+            <marker date="1475670139443" expanded="true" signature="36876:36986" ph="UPDATE route... " />
+            <marker date="1475670139443" expanded="true" signature="37372:37532" ph="UPDATE route... " />
+            <marker date="1475670139443" expanded="true" signature="38132:38174" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="41252:41422" ph="INSERT INTO ambassador... " />
+            <marker date="1475670139443" expanded="true" signature="41828:41917" ph="SELECT ambas... ambassador" />
+            <marker date="1475670139443" expanded="true" signature="42116:42204" ph="SELECT ambas... ambassador" />
+            <marker date="1475670139443" expanded="true" signature="46261:46396" ph="UPDATE ambas... " />
+            <marker date="1475670139443" expanded="true" signature="46800:46989" ph="UPDATE ambas... " />
+            <marker date="1475670139443" expanded="true" signature="47639:47696" ph="DELETE FROM " />
+            <marker date="1475670139443" expanded="true" signature="50735:50892" ph="INSERT INTO charity... " />
+            <marker date="1475670139443" expanded="true" signature="51289:51367" ph="SELECT chari... charity" />
+            <marker date="1475670139443" expanded="true" signature="51563:51637" ph="SELECT title... charity" />
+            <marker date="1475670139443" expanded="true" signature="55659:55775" ph="UPDATE chari... " />
+            <marker date="1475670139443" expanded="true" signature="56167:56337" ph="UPDATE chari... " />
+            <marker date="1475670139443" expanded="true" signature="56960:57008" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>

@@ -2,13 +2,13 @@
 
 include('dashboard.php');
 
-$result = getUserByName($_SESSION['username']);
+$result = getUserByEmail($_SESSION['email']);
 
 if (!$user->is_logged_in())
 {
     header('Location: login.php');
 }
-elseif ($result['username'] != $_SESSION['username'])
+elseif ($result['email'] != $_SESSION['email'])
 {
     $user->logout();
 }

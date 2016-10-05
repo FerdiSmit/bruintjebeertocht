@@ -170,14 +170,19 @@ function saveRegistration($username, $email, $password)
 
 function checkLogin()
 {
-    global $db, $usernameErr, $passwordErr;
+    global $db, $emailErr, $validEmailErr, $passwordErr;
 
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (empty($username))
+    if (empty($email))
     {
-        $error['username'] = 'Voert u alstublieft uw gebruikernaam in.';
+        $error['email'] = 'Voert u alstublieft uw gebruikernaam in.';
+    }
+
+    if (end(explode('@', $email)) !== 'bruintjebeertocht.nl')
+    {
+        $error['validation'] = 'Het ingevoerde e-mailadres is geen geldig adres.';
     }
 
     if (empty($password))
@@ -186,7 +191,7 @@ function checkLogin()
     }
 
     try {
-        $attempt = new LoginAttempt($_POST['username'], $_POST['password'], $db);
+        $attempt = new LoginAttempt($_POST['email'], $_POST['password'], $db);
         $attempt->whenReady(function($success) {
             echo $success ? "Valid" : "Invalid";
         });
@@ -209,9 +214,13 @@ function checkLogin()
     {
         foreach ($error as $key => $value)
         {
-            if ($key == 'username')
+            if ($key == 'email')
             {
-                $usernameErr = $value;
+                $emailErr = $value;
+            }
+            else if ($key == 'validation')
+            {
+                $validEmailErr = $value;
             }
             else if ($key == 'password')
             {
@@ -222,33 +231,33 @@ function checkLogin()
 
     if (!isset($error))
     {
-        login($username, $password);
+        login($email, $password);
     }
 }
 
-function login($username, $password)
+function login($email, $password)
 {
     global $db, $user, $loginError;
 
     $now = new DateTime();
 
-    $stmt = $db->prepare('SELECT userID, username, password FROM users WHERE username = :username');
+    $stmt = $db->prepare('SELECT userID, email, password FROM users WHERE email = :email');
     $stmt->execute(array(
-        ':username' => $username
+        ':email' => $email
     ));
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user->password_verify($password, $row['password']) == 1)
     {
-        $stmt = $db->prepare('UPDATE users SET last_login = :last_login WHERE username = :username');
+        $stmt = $db->prepare('UPDATE users SET last_login = :last_login WHERE email = :email');
         $stmt->execute(array(
             ':last_login' => $now->format('Y-m-d H:i:s'),
-            ':username' => $username
+            ':email' => $email
         ));
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
+        $_SESSION['email'] = $email;
 
-        //header('Location: dashboard/dashboard.php');
+        header('Location: dashboard/dashboard.php');
     }
     else
     {
@@ -267,13 +276,13 @@ function login($username, $password)
     }
 }
 
-function getUserByName($username)
+function getUserByEmail($email)
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT username FROM users WHERE username = :username');
+    $stmt = $db->prepare('SELECT email FROM users WHERE email = :email');
     $stmt->execute(array(
-        ':username' => $username
+        ':email' => $email
     ));
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -284,7 +293,7 @@ function getUsers()
 {
     global $db;
 
-    $stmt = $db->prepare('SELECT username, email FROM users');
+    $stmt = $db->prepare('SELECT username, email, last_login FROM users');
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -694,11 +703,11 @@ function getUserId()
 {
     global $db;
 
-    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
 
-    $stmt = $db->prepare('SELECT userID FROM users WHERE username = :username');
+    $stmt = $db->prepare('SELECT userID FROM users WHERE email = :email');
     $stmt->execute(array(
-        ':username' => $username
+        ':email' => $email
     ));
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 

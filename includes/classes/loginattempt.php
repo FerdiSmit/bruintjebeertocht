@@ -39,7 +39,7 @@ class LoginAttempt
     /**
      * @var string
      */
-    private $username;
+    private $email;
 
     /**
      * @var string
@@ -87,7 +87,7 @@ class LoginAttempt
      * @var \PDO $pdo
      * @throws Exception
      */
-    public function __construct($username, $password, \PDO $pdo)
+    public function __construct($email, $password, \PDO $pdo)
     {
         $this->pdo = $pdo;
         if ($this->pdo->getAttribute(PDO::ATTR_ERRMODE) !== PDO::ERRMODE_EXCEPTION)
@@ -95,7 +95,7 @@ class LoginAttempt
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
 
-        $this->username = $username;
+        $this->email = $email;
         $this->password = $password;
 
         if (!$this->isQueueSizeExceeded())
@@ -115,13 +115,13 @@ class LoginAttempt
      */
     private function addToQueue()
     {
-        $sql = 'INSERT INTO login_attempt_queue(ip_address, username) VALUES(?, ?)';
+        $sql = 'INSERT INTO login_attempt_queue(ip_address, email) VALUES(?, ?)';
         $stmt = $this->pdo->prepare($sql);
 
         try {
             $stmt->execute(array(
                 sprintf('%u', ip2long($_SERVER["REMOTE_ADDR"])),
-                $this->username
+                $this->email
             ));
             $this->attemptID = (int)$this->pdo->lastInsertId();
         }
@@ -140,12 +140,12 @@ class LoginAttempt
     private function isQueueSizeExceeded()
     {
         $sql = 'SELECT COUNT(*) AS overall,
-                       COUNT(IF(username = ?, TRUE, NULL)) AS user
+                       COUNT(IF(email = ?, TRUE, NULL)) AS user
                 FROM login_attempt_queue
                 WHERE last_checked > NOW() - INTERVAL ? MICROSECOND';
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(array(
-            $this->username,
+            $this->email,
             self::ATTEMPT_EXPIRATION_TIMEOUT * 1000
         ));
 
@@ -170,7 +170,7 @@ class LoginAttempt
         {
             $sql = 'SELECT id FROM login_attempt_queue
                     WHERE last_checked > NOW() - INTERVAL ? MICROSECOND AND
-                    username = ?
+                    email = ?
                     ORDER BY id ASC
                     LIMIT 1';
             $this->readyCheckStatement = $this->pdo->prepare($sql);
@@ -178,7 +178,7 @@ class LoginAttempt
 
         $this->readyCheckStatement->execute(array(
             self::ATTEMPT_EXPIRATION_TIMEOUT * 1000,
-            $this->username
+            $this->email
         ));
 
         $result = (int)$this->readyCheckStatement->fetchColumn();
@@ -209,9 +209,9 @@ class LoginAttempt
         {
             $sql = 'SELECT password
                     FROM users
-                    WHERE username = ?';
+                    WHERE email = ?';
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute(array($this->username));
+            $stmt->execute(array($this->email));
             $realHash = $stmt->fetchColumn();
 
             if ($realHash)

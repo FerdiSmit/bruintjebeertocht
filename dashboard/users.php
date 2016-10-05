@@ -12,6 +12,7 @@ include('dashboard.php');
                 <tr>
                     <th>Naam</th>
                     <th>Email</th>
+                    <th>Laatst ingelogd</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@ include('dashboard.php');
                 echo '<tr>';
                 echo '<td>' . $user['username'] . '</td>';
                 echo '<td>' . $user['email'] . '</td>';
+                echo '<td>' . $user['last_login'] . '</td>';
                 echo '<tr/>';
             }
             ?>

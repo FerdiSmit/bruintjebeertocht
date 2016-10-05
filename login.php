@@ -41,13 +41,17 @@ if (isset($_POST['submit']))
             <form role="form" method="post" class="form-horizontal">
                 <div class="row">
                     <div class="form-group">
-                        <label for="username" class="col-xs-12 col-sm-2 control-label">Gebruikersnaam</label>
+                        <label for="email" class="col-xs-12 col-sm-2 control-label">Email</label>
                         <div class="col-xs-12 col-sm-6">
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Gebruikersnaam..." value="<?php if (isset($_POST['username'])) { echo htmlspecialchars($_POST['username']); } ?>">
+                            <input type="text" class="form-control" name="email" id="username" placeholder="Email..." value="<?php if (isset($_POST['username'])) { echo htmlspecialchars($_POST['username']); } ?>">
                             <?php
-                            if (isset($usernameErr))
+                            if (isset($emailErr))
                             {
-                                echo '<span class="error">' . $usernameErr . '</span>';
+                                echo '<span class="error">' . $emailErr . '</span>';
+                            }
+                            elseif (isset($validEmailErr))
+                            {
+                                echo '<span class="error">' . $validEmailErr . '</span>';
                             }
                             ?>
                         </div>
