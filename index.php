@@ -8,7 +8,7 @@ global $paginate;
         <?php
         $rows = getNewsForPagination();
 
-        $records_per_page = 5;
+        $records_per_page = 8;
         $query = $paginate->paging($rows, $records_per_page);
         $results = $paginate->dataView($query);
 

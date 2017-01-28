@@ -1295,7 +1295,7 @@ function checkRoute()
             }
             else
             {
-                $existErr = 'Dit bestand bestaa al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
             }
         }
         else
@@ -1307,7 +1307,7 @@ function checkRoute()
             }
             else
             {
-                $existErr = 'Dit bestand bestaa al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
             }
         }
     }

@@ -11,6 +11,8 @@ class Paginate
 
     public function dataView($query)
     {
+        global $paginateErr;
+
         $stmt = $this->_db->prepare($query);
         $stmt->execute();
 
@@ -21,8 +23,8 @@ class Paginate
         }
         else
         {
-            $error = 'Er staat niets in de database';
-            return $error;
+            $paginateErr = 'Er staat niets in de database';
+            return $paginateErr;
         }
     }
 

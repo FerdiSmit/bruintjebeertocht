@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /albums/
+Disallow: /ambassadors/
+Disallow: /charities/
+Disallow: /dashboard/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /routes/

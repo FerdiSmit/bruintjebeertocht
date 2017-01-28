@@ -1,9 +1,5 @@
 <?php
 include('header.php');
-
-global $db;
-
-$paginate = new Paginate($db);
 ?>
         <div id="middle" class="col-xs-8">
             <div class="about">

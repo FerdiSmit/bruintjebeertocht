@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php if (isset($title)) { echo $title; }?></title>
+    <title>Bruintje Beer Tocht</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/ico" href="../images/bbt.ico">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css">
 

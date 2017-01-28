@@ -14,5 +14,5 @@ else if ($results['email'] != $_SESSION['email'])
 }
 else
 {
-    //deleteAlbum();
+    deleteAlbum();
 }

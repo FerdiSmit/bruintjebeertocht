@@ -1,7 +1,5 @@
 body {
     background-color: #c2000b;
-    position: relative;
-    z-index: -1;
 }
 
 .container {
@@ -27,6 +25,10 @@ body {
     width: 150px;
     height: 150px;
     margin-left: 80px;
+}
+
+#header .bruintjebeer {
+    margin-top: 30px;
 }
 
 #header .ftcmusselkanaal {
@@ -64,6 +66,30 @@ body {
     color: #ffffff;
 }
 
+#menu .facebook-icon {
+    content: url('../images/facebook-icon.png');
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+#menu .facebook-icon:hover {
+    content: url('../images/facebook-icon-hover.png');
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+#menu .email-icon {
+    content: url('../images/email-icon.png');
+    margin-top: 10px;
+    margin-right: 12px;
+}
+
+#menu .email-icon:hover {
+    content: url('../images/email-icon-hover.png');
+    margin-top: 10px;
+    margin-right: 12px;
+}
+
 #flexbox {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -93,6 +119,10 @@ body {
     position: relative;
     z-index: 1;
     background-color: #ffffff;
+}
+
+#middle .img-size {
+    width: 25%;
 }
 
 #middle .news {
@@ -249,6 +279,21 @@ body {
 
 #footer {
     background-color: #f0d514;
+    height: 60px;
+    padding-top: 15px;
+    color: #000000;
+}
+
+#footer .footer-middle {
+    text-align: center;
+}
+
+#footer a {
+    color: #000000;
+}
+
+#footer a:hover {
+    color: #c2000b;
 }
 
 #leftside h4,
