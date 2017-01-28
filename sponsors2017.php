@@ -156,6 +156,17 @@ include('header.php');
                     </div>
                     <div class="col-xs-4"></div>
                 </div>
+                <div class="col-xs-4">
+                    <a href="http://www.hwt.nl/" target="_blank">
+                        <img src="images/logo_huisman.jpg" alt="Huisman Warmtetechniek" class="img-responsive img-rounded" />
+                    </a>
+                </div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                    <a href="http://www.solarnoord.nl/">
+                        <img src="images/logo_solar.jpg" alt="Solar Noord" class="img-responsive img-rounded" />
+                    </a>
+                </div>
             </div>
         </div>
     </div>
