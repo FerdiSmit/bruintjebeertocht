@@ -316,12 +316,18 @@ function deleteUsers()
 
 function checkCreateNews()
 {
-    global $titleErr, $summaryErr, $startDateErr, $endDateErr, $descErr;
+    global $titleErr, $summaryErr, $existErr, $startDateErr, $descErr;
 
     $title = checkData($_POST['title']);
     $summary = checkData($_POST['summary']);
+    $filename = $_FILES['image']['name'];
+    $filesize = $_FILES['image']['size'];
+    $file_ext = $_FILES['image']['type'];
+    $file_tmp = $_FILES['image']['tmp_name'];
     $startDate = checkData($_POST['startdate']);
     $description = $_POST['description'];
+
+    $extensions = array('jpg', 'jpeg', 'png');
 
     if (empty($title))
     {
@@ -368,11 +374,34 @@ function checkCreateNews()
 
     if (!isset($error))
     {
-        saveNews($title, $summary, $startDate, $description);
+        if (empty($filename))
+        {
+            saveNewsWithoutImage($title, $summary, $startDate, $description);
+        }
+        else
+        {
+
+            $newsDir = '/../news/';
+
+            if (!is_dir(__DIR__, $newsDir)) {
+                mkdir(__DIR__ . $newsDir, 0700);
+                if (!file_exists(__DIR__ . $newsDir . $filename)) {
+                    move_uploaded_file($file_tmp, __DIR__ . $newsDir . $filename);
+                    saveNews($title, $summary, $filename, $filesize, $file_ext, $startDate, $description);
+                } else {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            } else {
+                if (!file_exists(__DIR__ . $newsDir . $filename)) {
+                    move_uploaded_file($file_tmp, __DIR__ . $newsDir . $filename);
+                    saveNews($title, $summary, $filename, $filesize, $file_ext, $startDate, $description);
+                }
+            }
+        }
     }
 }
 
-function saveNews($title, $summary, $startDate, $description)
+function saveNewsWithoutImage($title, $shortDesc, $startDate, $description)
 {
     global $db;
 
@@ -380,7 +409,26 @@ function saveNews($title, $summary, $startDate, $description)
     $stmt->execute(array(
         ':userID' => getUserId(),
         ':title' => $title,
+        ':shortDesc' => $shortDesc,
+        ':created_date' => $startDate,
+        ':longDesc' => $description
+    ));
+
+    header('Location: news.php');
+}
+
+function saveNews($title, $summary, $filename, $filesize, $file_ext, $startDate, $description)
+{
+    global $db;
+
+    $stmt = $db->prepare('INSERT INTO news (userID, title, shortDesc, created_date, longDesc, image, size, extension) VALUES (:userID, :title, :shortDesc, :created_date, :longDesc, :image, :size, :extension)');
+    $stmt->execute(array(
+        ':userID' => getUserId(),
+        ':title' => $title,
         ':shortDesc' => $summary,
+        ':image' => $filename,
+        ':size' => $filesize,
+        ':extension' => $file_ext,
         ':created_date' => $startDate,
         ':longDesc' => $description
     ));
@@ -392,7 +440,7 @@ function newsList()
 {
     global $db;
 
-    $stmt = $db->prepare("SELECT newsID, title, created_date, last_updated FROM news");
+    $stmt = $db->prepare("SELECT * FROM news");
     $stmt->execute();
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -410,7 +458,7 @@ function getNewsById()
         $id = $_GET['id'];
     }
 
-    $stmt = $db->prepare("SELECT title, shortDesc, last_updated, longDesc FROM news WHERE newsID = :newsID");
+    $stmt = $db->prepare("SELECT title, shortDesc, image, last_updated, longDesc FROM news WHERE newsID = :newsID");
     $stmt->execute(array(
         ':newsID' => $id
     ));
@@ -428,6 +476,10 @@ function updateNews()
 
     $title = checkData($_POST['title']);
     $shortDesc = checkData($_POST['summary']);
+    $filename = $_FILES['image']['name'];
+    $filesize = $_FILES['image']['size'];
+    $file_ext = $_FILES['image']['type'];
+    $file_tmp = $_FILES['image']['tmp_name'];
     $longDesc = $_POST['description'];
 
     if (empty($title))
@@ -468,16 +520,77 @@ function updateNews()
     {
         $now = new DateTime();
 
-        $stmt = $db->prepare("UPDATE news SET title = :title, shortDesc = :shortDesc, last_updated = :last_updated, longDesc = :longDesc WHERE newsID = :newsID");
-        $stmt->execute(array(
-            ':title' => $title,
-            ':shortDesc' => $shortDesc,
-            ':last_updated' => $now->format('d-m-Y H:i:s'),
-            ':longDesc' => $longDesc,
-            ':newsID' => $id
-        ));
+        if (empty($filename))
+        {
+            $stmt =  $db->prepare("UPDATE news SET title = :title, shortDesc = :shortDesc, last_updated = :last_updated, longDesc = :longDesc WHERE newsID = :newsID");
+            $stmt->execute(array(
+                ':title' => $title,
+                ':shortDesc' => $shortDesc,
+                ':last_updated' => $now->format('d-m-Y H:i:s'),
+                ':longDesc' => $longDesc,
+                ':newsID' => $id
+            ));
 
-        header('Location: news.php');
+            header('Location: news.php');
+        }
+        else
+        {
+            $newsDir = '/../news/';
+
+            if (!is_dir(__DIR__ . $newsDir))
+            {
+                mkdir(__DIR__ . $newsDir, 0700);
+                if (!file_exists(__DIR__ . $newsDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $newsDir . $filename);
+
+                    $stmt = $db->prepare("UPDATE news SET title = :title, shortDesc = :shortDesc, image = :image, size = :size, extension = :extension, last_updated = :last_updated, longDesc = :longDesc WHERE newsID = :newsID");
+                    $stmt->execute(array(
+                        ':title' => $title,
+                        ':shortDesc' => $shortDesc,
+                        ':image' => $filename,
+                        ':size' => $filesize,
+                        ':extension' => $file_ext,
+                        ':last_updated' => $now->format('d-m-Y H:i:s'),
+                        ':longDesc' => $longDesc,
+                        ':newsID' => $id
+                    ));
+
+                    header('Location: news.php');
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+            else
+            {
+                if (!file_exists(__DIR__ . $newsDir . $filename))
+                {
+                    move_uploaded_file($file_tmp, __DIR__ . $newsDir . $filename);
+
+                    $now = new DateTime();
+
+                    $stmt = $db->prepare("UPDATE news SET title = :title, shortDesc = :shortDesc, image = :image, size = :size, extension = :extension, last_updated = :last_updated, longDesc = :longDesc WHERE newsID = :newsID");
+                    $stmt->execute(array(
+                        ':title' => $title,
+                        ':shortDesc' => $shortDesc,
+                        ':image' => $filename,
+                        ':size' => $filesize,
+                        ':extension' => $file_ext,
+                        ':last_updated' => $now->format('d-m-Y H:i:s'),
+                        ':longDesc' => $longDesc,
+                        ':newsID' => $id
+                    ));
+
+                    header('Location: news.php');
+                }
+                else
+                {
+                    $existErr = 'Dit bestand bestaat al (' . $filename . ') . Geef het bestand een andere naam, of u kunt annuleren.';
+                }
+            }
+        }
     }
 }
 
@@ -508,7 +621,7 @@ function getNews()
 
 function getNewsForPagination()
 {
-    $query = 'SELECT newsID, title, shortDesc, last_updated, longDesc FROM news ORDER BY created_date DESC';
+    $query = 'SELECT newsID, title, shortDesc, image, last_updated, longDesc FROM news ORDER BY newsID DESC';
 
     return $query;
 }

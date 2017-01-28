@@ -130,19 +130,33 @@ body {
     margin-right: 20px;
 }
 
-#middle .news .newsheader {
+#middle .news .news-title {
     font-weight: bold;
 }
 
-#middle .news .newsdate {
-    margin-top: 20px;
+#middle .news .news-image {
+    margin-right: 20px;
     margin-bottom: 20px;
+}
+
+#middle .news .news-date {
+    font-style: italic;
+    font-size: 12px;
 }
 
 #middle .news .date {
     margin-right: 20px;
     font-style: italic;
     font-size: 12px;
+    margin-left: 440px;
+}
+
+#middle .home-news {
+    font-weight: bold;
+}
+
+#middle .home-image {
+    margin-right: 20px;
 }
 
 #middle .about .abouttitle {

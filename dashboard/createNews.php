@@ -9,7 +9,7 @@ if (isset($_POST['submit']))
 ?>
 
 <div id="news-table">
-    <form role="form" method="post" class="form-horizontal">
+    <form role="form" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="col-xs-10">
             <div class="form-group col-sm-7">
                 <label for="title">Titel</label>
@@ -30,6 +30,10 @@ if (isset($_POST['submit']))
                     echo '<span class="error">' . $summaryErr . '</span>';
                 }
                 ?>
+            </div>
+            <div class="form-group col-sm-7">
+                <label for="image">Afbeelding</label>
+                <input type="file" name="image" class="btn btn-primary btn-file" />
             </div>
             <div class="form-group col-sm-7">
                 <label for="startdate">Datum</label>
