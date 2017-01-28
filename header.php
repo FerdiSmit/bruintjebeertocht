@@ -87,7 +87,29 @@ require('includes/functions.php');
                             <?php
                         }
                         ?>
-                        <li><a href="charities.php">Goede Doelen</a></li>
+                        <?php
+                        $countCharities = count(getCharities());
+
+                        if ($countCharities != 0)
+                        {
+                            $charities = getCharities();
+                            ?>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Goede doelen <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <?php
+                                        foreach($charities as $charity)
+                                        {
+                                            echo '<a href="charities.php?id=' . $charity['charityID'] . '">' . $charity['title'] . '</a>';
+                                        }
+                                        ?>
+                                    </li>
+                                </ul>
+                            </li>
+                            <?php
+                        }
+                        ?>
                         <li><a href="magazine.php">Magazine</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li>
