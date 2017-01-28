@@ -9,7 +9,7 @@ include('dashboard.php');
         <table class="table table-condensed table-responsive">
             <thead>
             <tr>
-                <th>Naam ambassadeur</th>
+                <th>Naam goede doel</th>
                 <th>Datum aangemaakt</th>
                 <th>Datum bewerkt</th>
                 <th>Bewerken</th>
